@@ -1,23 +1,17 @@
 (function () {
   'use strict';
 
-  var D = {}; // loaded shared data
+  var D = {};
 
-  function el(tag, cls, html) {
-    var n = document.createElement(tag);
-    if (cls) n.className = cls;
-    if (html != null) n.innerHTML = html;
-    return n;
-  }
+  function el(t, c, h) { var n = document.createElement(t); if (c) n.className = c; if (h != null) n.innerHTML = h; return n; }
   function esc(s) {
-    return String(s == null ? '' : s)
-      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+    return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
   function num(n) { return n.toLocaleString('en-US'); }
   function shortNum(n) {
-    if (n >= 1000000) return (n / 1000000).toFixed(n % 1000000 === 0 ? 0 : 2).replace(/\.?0+$/, '') + 'M';
-    if (n >= 1000) return Math.round(n / 1000) + 'k';
+    if (n >= 1000000) return (n / 1000000).toFixed(n % 1000000 === 0 ? 0 : 1).replace(/\.0$/, '') + ' million';
+    if (n >= 1000) return Math.round(n / 1000) + ',000';
     return num(n);
   }
   function date(iso) {
@@ -28,74 +22,205 @@
     if (p.length === 2) return M[+p[1] - 1] + ' ' + p[0];
     return M[+p[1] - 1] + ' ' + (+p[2]) + ', ' + p[0];
   }
-  function srcLine(s, prefix) {
+  function src(s, prefix) {
     if (!s) return '';
-    var adv = s.kind === 'advocacy' ? '<span class="badge adv">advocacy source</span>' : '';
+    var adv = s.kind === 'advocacy' ? '<span class="badge adv">advocacy estimate</span>' : '';
     var org = s.url ? '<a href="' + esc(s.url) + '" rel="noopener">' + esc(s.org) + '</a>' : esc(s.org);
     return '<p class="src">' + (prefix || 'Source:') + ' ' + org +
-      (s.as_of ? ', as of ' + esc(date(s.as_of)) : '') + adv + '</p>';
+      (s.as_of ? ' &middot; checked ' + esc(date(s.as_of)) : '') + adv + '</p>';
   }
-  function flag(text) {
-    return text ? '<p class="flag"><b>Caveat.</b> ' + esc(text) + '</p>' : '';
+  function srcList(list, label) {
+    return '<p class="src">' + (label || 'Sources:') + ' ' + list.map(function (s) {
+      return '<a href="' + esc(s.url) + '" rel="noopener">' + esc(s.org) + '</a>';
+    }).join(' &middot; ') + '</p>';
   }
-  function h2(n, title) {
-    return '<h2><span class="num">' + n + '</span>' + esc(title) + '</h2>';
+  function flag(t) { return t ? '<p class="flag">' + esc(t) + '</p>' : ''; }
+
+  function section(id, kicker, title, body, cls) {
+    var s = el('section', cls || null);
+    s.id = id;
+    s.innerHTML = '<div class="head"><p class="kicker">' + esc(kicker) + '</p>' +
+      '<h2>' + esc(title) + '</h2></div>' + body;
+    return s;
   }
 
-  // ---------- sections ----------
+  // ---------- 1. what happened ----------
 
-  function secSixty(c) {
-    var s = el('section');
-    s.innerHTML = h2('01', 'In sixty seconds') +
+  function secNow(c) {
+    var s = el('section', 'now');
+    s.innerHTML =
+      '<div class="banner">' +
+        '<p class="headline">' + esc(c.status_headline) + '</p>' +
+        (c.status_sub ? '<p class="sub">' + esc(c.status_sub) + '</p>' : '') +
+        '<p class="asof">Checked ' + esc(date(c.updated)) + '</p>' +
+      '</div>' +
       '<ol class="sixty">' + c.in_sixty_seconds.map(function (t) {
         return '<li>' + esc(t) + '</li>';
       }).join('') + '</ol>';
     return s;
   }
 
-  function secStatuses() {
-    var s = el('section');
-    s.innerHTML = h2('02', 'Status types, and what each one actually gives you') +
-      '<p class="lede">' + esc(D.statuses.note) + ' Most public confusion comes from treating these as interchangeable. They are not: two of them lead to a green card, and several lead nowhere by design.</p>' +
-      '<div class="grid">' + D.statuses.statuses.map(function (st) {
-        function fact(k, v, cls) {
-          return '<dt>' + k + '</dt><dd' + (cls ? ' class="' + cls + '"' : '') + '>' + esc(v) + '</dd>';
-        }
-        var gc = /^No/i.test(st.green_card) ? 'no' : (/^Yes|^This is it/i.test(st.green_card) ? 'yes' : '');
-        var wk = /^Yes/i.test(st.work) ? 'yes' : (/^No/i.test(st.work) ? 'no' : '');
-        return '<div class="card">' +
-          '<h4>' + esc(st.name) + '</h4>' +
-          '<p class="short">' + esc(st.short) + '</p>' +
-          '<p class="what">' + esc(st.what) + '</p>' +
-          '<dl class="facts">' +
-            fact('Granted by', st.granted_by) +
-            fact('Can work', st.work, wk) +
-            fact('Green card', st.green_card, gc) +
-            fact('Lasts', st.duration) +
-          '</dl>' + srcLine(st.source) + '</div>';
-      }).join('') + '</div>';
-    return s;
+  // ---------- 2. the line ----------
+
+  function secLine() {
+    var L = D.helping.line;
+    var body =
+      '<p class="lede">' + esc(L.lede) + '</p>' +
+      '<div class="rule"><p>' + esc(L.rule) + '</p>' + src(L.rule_source) + '</div>' +
+      '<p class="lede">' + esc(L.test) + ' ' + src(L.test_source).replace(/<\/?p[^>]*>/g, '') + '</p>' +
+      '<div class="two-col">' +
+        '<div class="col can"><h3><span class="mark">Yes</span> You can</h3><ul>' +
+          L.can.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') +
+        '</ul></div>' +
+        '<div class="col cannot"><h3><span class="mark">No</span> You cannot</h3><ul>' +
+          L.cannot.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') +
+        '</ul></div>' +
+      '</div>' +
+      '<div class="aside"><h4>One narrow exception, and it names clergy</h4>' +
+        '<p>' + esc(L.clergy_note.text) + '</p>' + src(L.clergy_note.source) + '</div>';
+    return section('line', 'Before anything else', L.heading, body, 'line');
   }
 
-  function secTimeline(c) {
-    var s = el('section');
-    s.innerHTML = h2('03', 'Timeline') +
-      '<p class="lede">Every entry cites the Federal Register notice or court order it comes from. Highlighted entries are the ones that changed people’s legal position.</p>' +
-      '<ul class="tl">' + c.timeline.map(function (t) {
-        var cite = t.url
-          ? '<a href="' + esc(t.url) + '" rel="noopener">' + esc(t.cite) + '</a>'
-          : esc(t.cite);
-        return '<li' + (t.key ? ' class="key"' : '') + '>' +
-          '<div class="d">' + esc(date(t.date)) + '</div>' +
-          '<p class="e">' + esc(t.event) + '</p>' +
-          '<div class="c">' + cite + '</div></li>';
-      }).join('') + '</ul>';
-    return s;
+  // ---------- 3. four words ----------
+
+  function statusRow(st) {
+    function cell(v, note) {
+      var cls = /^Yes|^It is/i.test(v) ? 'yes' : (/^No|^Not/i.test(v) ? 'no' : 'maybe');
+      return '<td class="ans ' + cls + '"><b>' + esc(v) + '</b>' +
+        (note ? '<span>' + esc(note) + '</span>' : '') + '</td>';
+    }
+    return '<tr>' +
+      '<td class="who"><b>' + esc(st.name) + '</b><span>' + esc(st.plain) + '</span></td>' +
+      cell(st.green_card, st.green_card_note) +
+      cell(st.work, st.work_note) +
+      '<td class="lasts">' + esc(st.lasts) + '</td>' +
+    '</tr>';
   }
+
+  function secWords() {
+    var S = D.statuses;
+    var core = S.statuses.filter(function (s) { return S.core.indexOf(s.id) > -1; });
+    var rest = S.statuses.filter(function (s) { return S.core.indexOf(s.id) < 0; });
+    var head = '<thead><tr><th>Status</th><th>Leads to a green card?</th><th>Can they work?</th><th>How long it lasts</th></tr></thead>';
+
+    var body =
+      '<p class="lede">' + esc(S.lede) + '</p>' +
+      '<div class="tw"><table class="cmp">' + head + '<tbody>' +
+        core.map(statusRow).join('') + '</tbody></table></div>' +
+      '<div class="cards">' + core.map(function (st) {
+        return '<div class="card"><h4>' + esc(st.name) + '</h4><p>' + esc(st.what) + '</p>' +
+          src(st.source) + '</div>';
+      }).join('') + '</div>' +
+      '<h3>' + esc(S.more_label) + '</h3>' +
+      '<div class="tw"><table class="cmp">' + head + '<tbody>' +
+        rest.map(statusRow).join('') + '</tbody></table></div>' +
+      '<div class="cards">' + rest.map(function (st) {
+        return '<div class="card"><h4>' + esc(st.name) + '</h4><p>' + esc(st.what) + '</p>' +
+          src(st.source) + '</div>';
+      }).join('') + '</div>';
+    return section('words', 'The thing people get wrong', S.heading, body);
+  }
+
+  // ---------- 4. what termination means ----------
+
+  function secMeans(c) {
+    var body = '<ul class="pts">' + c.what_termination_means.map(function (p) {
+      return '<li><b>' + esc(p.point) + '</b><span>' + esc(p.detail) + '</span></li>';
+    }).join('') + '</ul>' +
+      (c.also_ask ? '<div class="aside"><h4>' + esc(c.also_ask.heading) + '</h4><p>' +
+        esc(c.also_ask.body) + '</p>' + src(c.also_ask.source) + '</div>' : '');
+    return section('means', 'If someone says they had TPS', 'What changed for them', body);
+  }
+
+  // ---------- 5. paths ----------
+
+  function secPaths() {
+    var P = D.paths;
+    var body = '<p class="lede">' + esc(P.lede) + '</p>' +
+      P.critical.map(function (k) {
+        return '<div class="key"><h3>' + esc(k.title) + '</h3><p>' + esc(k.body) + '</p>' +
+          '<p class="do">' + esc(k.why) + '</p>' + src(k.source) + '</div>';
+      }).join('') +
+      '<h3>Things that may exist for them</h3>' +
+      '<ul class="pts">' + P.paths.map(function (p) {
+        return '<li><b>' + esc(p.name) + '</b><span>' + esc(p.plain) + '</span>' + src(p.source) + '</li>';
+      }).join('') + '</ul>' +
+      waitTable();
+    return section('paths', 'Do not despair on their behalf', P.heading, body);
+  }
+
+  function waitTable() {
+    var w = D.wait;
+    var head = '<tr><th class="first">Who is waiting</th>' + w.columns.map(function (c) {
+      return '<th' + (c.highlight ? ' class="hl"' : '') + '>' + esc(c.label) + '</th>';
+    }).join('') + '</tr>';
+    var rows = w.categories.map(function (cat) {
+      var r = w.final_action_dates[cat.id];
+      return '<tr><td class="first">' + esc(cat.label) + '</td>' +
+        w.columns.map(function (c) {
+          return '<td class="num' + (c.highlight ? ' hl' : '') + '">' + esc(date(r[c.id])) + '</td>';
+        }).join('') + '</tr>';
+    }).join('');
+    return '<h3>' + esc(w.heading) + '</h3><p class="lede">' + esc(w.how_it_works) + '</p>' +
+      '<div class="tw"><table><thead>' + head + '</thead><tbody>' + rows + '</tbody></table></div>' +
+      '<p class="src">Each date is the day the government is currently working on. ' +
+      esc(w.bulletin.month) + ' Visa Bulletin, <a href="' + esc(w.bulletin.url) +
+      '" rel="noopener">U.S. Department of State</a>.</p>';
+  }
+
+  // ---------- 6. scams ----------
+
+  function secScams() {
+    var S = D.helping.scams;
+    var body = '<p class="lede">' + esc(S.lede) + '</p>' + src(S.lede_source) +
+      '<div class="rule"><p>' + esc(S.official_line) + '</p>' + src(S.official_source) + '</div>' +
+      '<h3>Teach them these warning signs</h3>' +
+      '<ul class="signs">' + S.signs.map(function (s) {
+        return '<li><b>' + esc(s.sign) + '</b><span>' + esc(s.why) + '</span></li>';
+      }).join('') + '</ul>' +
+      srcList(S.signs_sources) +
+      '<h3>If it already happened</h3>' +
+      '<div class="cards">' + S.reporting.map(function (r) {
+        return '<div class="card"><h4><a href="' + esc(r.url) + '" rel="noopener">' + esc(r.name) +
+          '</a></h4><p>' + esc(r.what) + '</p></div>';
+      }).join('') + '</div>';
+    return section('scams', 'The most common way people get hurt', S.heading, body, 'scams');
+  }
+
+  // ---------- 7. where to send them ----------
+
+  function orgCard(g) {
+    return '<div class="org"><h4><a href="' + esc(g.url) + '" rel="noopener">' + esc(g.name) + '</a></h4>' +
+      '<div class="where">' + esc(g.region || g.org) + '</div>' +
+      '<p>' + esc(g.what) + '</p>' +
+      '<div class="cost">' + esc(g.cost) + '</div>' + flag(g.flag) + '</div>';
+  }
+
+  function secHelp() {
+    var o = D.orgs;
+    var body = '<p class="lede">' + esc(o.note) + '</p>' +
+      '<h3>Directories first</h3>' + o.directories.map(orgCard).join('') +
+      '<h3>Organizations</h3>' + o.organizations.map(orgCard).join('');
+    return section('help', 'The most useful thing you can do', o.heading, body, 'help');
+  }
+
+  // ---------- 8. accreditation ----------
+
+  function secAccredit() {
+    var A = D.helping.accreditation;
+    var body = '<p class="lede">' + esc(A.lede) + '</p>' +
+      '<dl class="gloss">' + A.steps.map(function (s) {
+        return '<div><dt>' + esc(s.term) + '</dt><dd>' + esc(s.def) + '</dd></div>';
+      }).join('') + '</dl>' +
+      '<p>' + esc(A.how) + ' <a href="' + esc(A.program_url) + '" rel="noopener">The program page</a> ' +
+      'has the forms. <a href="' + esc(A.roster_url) + '" rel="noopener">The public roster</a> ' +
+      'lists who is already approved.</p>' + flag(A.roster_note) + src(A.source);
+    return section('accredit', 'The longer road', A.heading, body);
+  }
+
+  // ---------- 9. conditions ----------
 
   function chart(m) {
-    var vals = m.series.filter(function (x) { return x.comparable !== false; })
-                       .map(function (x) { return x.value; });
     var max = Math.max.apply(null, m.series.map(function (x) { return x.value; }));
     var anyPartial = m.series.some(function (x) { return x.comparable === false; });
     var seen = {}, srcs = [];
@@ -103,247 +228,158 @@
       if (x.source && !seen[x.source.url]) { seen[x.source.url] = 1; srcs.push(x.source); }
     });
     var bars = m.series.map(function (x) {
-      var pct = Math.max(2, (x.value / max) * 100);
-      var inside = pct > 30;
+      var pct = Math.max(3, (x.value / max) * 100), inside = pct > 34;
       return '<div class="bar' + (x.comparable === false ? ' partial' : '') + '">' +
-        '<div class="lab">' + esc(x.period) +
-          (x.comparable === false ? '<span class="badge partial">part</span>' : '') + '</div>' +
+        '<div class="lab">' + esc(x.period) + '</div>' +
         '<div class="track"><div class="fill" style="width:' + pct.toFixed(1) + '%"></div>' +
-          '<span class="val' + (inside ? ' inside' : '') + '">' + num(x.value) + '</span></div>' +
-      '</div>';
+        '<span class="val' + (inside ? ' inside' : '') + '">' + num(x.value) + '</span></div></div>';
     }).join('');
-    var notes = m.series.filter(function (x) { return x.note || x.flag; }).map(function (x) {
-      return '<p class="partial-note"><b>' + esc(x.period) + '.</b> ' +
-        esc(x.note || '') + (x.flag ? ' ' + esc(x.flag) : '') + '</p>';
-    }).join('');
-    return '<div class="metric">' +
-      '<h3>' + esc(m.label) + '</h3>' +
+    return '<div class="metric"><h3>' + esc(m.label) + '</h3>' +
       (m.note ? '<p class="note">' + esc(m.note) + '</p>' : '') +
       '<div class="bars">' + bars + '</div>' +
-      (anyPartial ? '<p class="partial-note"><b>Hatched bars cover a partial period.</b> They are shown for currency, not comparison. Do not read them against the full periods above, and do not annualize them.</p>' : '') +
-      notes +
-      '<p class="series-src">Sources: ' + srcs.map(function (s) {
-        return '<a href="' + esc(s.url) + '" rel="noopener">' + esc(s.org) + '</a>';
-      }).join(' · ') + '</p>' +
-    '</div>';
+      (anyPartial ? '<p class="stripe-note">Striped bars cover only part of a year. They are here so the page is current — do not compare them to the full years above them.</p>' : '') +
+      srcList(srcs) + '</div>';
   }
 
   function secConditions(c) {
-    var k = c.conditions, s = el('section');
-    var adv = k.advisory;
-    var html = h2('04', 'Conditions in ' + c.name) +
-      '<p class="lede">' + esc(k.intro) + '</p>' +
-      k.metrics.map(chart).join('');
-
-    html += '<h3>' + esc(k.health.label) + '</h3><ul class="pts">' +
-      k.health.points.map(function (p) {
-        return '<li><span>' + esc(p.text) + '</span>' + srcLine(p.source) + '</li>';
-      }).join('') + '</ul>';
-
-    html += '<h3>' + esc(k.political.label) + '</h3><ul class="tl">' +
-      k.political.events.map(function (e) {
-        return '<li><div class="d">' + esc(date(e.date)) + '</div>' +
-          '<p class="e">' + esc(e.text) + '</p>' +
-          (e.url ? '<div class="c"><a href="' + esc(e.url) + '" rel="noopener">Source</a></div>' : '') +
-          (e.flag ? flag(e.flag) : '') + '</li>';
-      }).join('') + '</ul>';
-
-    html += '<h3>U.S. travel advisory</h3>' +
-      '<div class="metric"><h3 style="margin:0">' + esc(adv.label) + '</h3>' +
-      '<p class="note" style="margin-top:.4rem">' + esc(adv.reasons) + ' Issued ' + esc(date(adv.issued)) + '.</p>' +
-      srcLine({ org: adv.source.org, url: adv.url, as_of: adv.source.as_of }) + '</div>';
-
-    s.innerHTML = html;
-    return s;
+    var k = c.conditions, adv = k.advisory;
+    var body = '<p class="lede">' + esc(k.intro) + '</p>' +
+      k.metrics.map(chart).join('') +
+      '<h3>' + esc(k.health.label) + '</h3><ul class="pts">' +
+        k.health.points.map(function (p) {
+          return '<li><span>' + esc(p.text) + '</span>' + src(p.source) + '</li>';
+        }).join('') + '</ul>' +
+      '<h3>' + esc(k.political.label) + '</h3><ul class="tl">' +
+        k.political.events.map(function (e) {
+          return '<li><div class="d">' + esc(date(e.date)) + '</div><p class="e">' + esc(e.text) + '</p>' +
+            (e.url ? '<div class="c"><a href="' + esc(e.url) + '" rel="noopener">Source</a></div>' : '') + '</li>';
+        }).join('') + '</ul>' +
+      '<div class="advisory"><h4>' + esc(adv.label) + '</h4><p>' + esc(adv.reasons) +
+        ' The State Department issued this on ' + esc(date(adv.issued)) + '.</p>' +
+        src({ org: adv.source.org, url: adv.url, as_of: adv.source.as_of }) + '</div>';
+    return section('conditions', 'When someone asks why they will not just go home', k.heading, body);
   }
+
+  // ---------- 10. how many ----------
 
   function secAffected(c) {
-    var a = c.who_is_affected, s = el('section');
-    var html = h2('05', 'Who is affected in the United States') +
-      '<div class="metric"><div class="headline-fig">' + esc(a.headline) + '</div>' +
-      '<p class="headline-lab">' + esc(a.headline_label) + '</p>' + srcLine(a.headline_source) + '</div>' +
+    var a = c.who_is_affected;
+    var b = a.by_state, max = Math.max.apply(null, b.series.map(function (x) { return x.value; }));
+    var body = '<div class="figure"><div class="big-num">' + esc(a.headline) + '</div>' +
+      '<p>' + esc(a.headline_label) + '</p>' + src(a.headline_source) + '</div>' +
       '<ul class="pts">' + a.notes.map(function (n) {
-        return '<li><span>' + esc(n.text) + '</span>' + srcLine(n.source) + '</li>';
-      }).join('') + '</ul>';
-
-    if (a.by_state) {
-      var b = a.by_state, max = Math.max.apply(null, b.series.map(function (x) { return x.value; }));
-      html += '<div class="metric"><h3>' + esc(b.label) +
-        '<span class="badge adv">advocacy estimate</span></h3>' +
-        '<p class="note">' + esc(b.caveat) + '</p><div class="bars">' +
-        b.series.map(function (x) {
-          var pct = Math.max(2, (x.value / max) * 100), inside = pct > 30;
-          return '<div class="bar"><div class="lab">' + esc(x.label) + '</div>' +
-            '<div class="track"><div class="fill" style="width:' + pct.toFixed(1) + '%"></div>' +
-            '<span class="val' + (inside ? ' inside' : '') + '">' + shortNum(x.value) + '</span></div></div>';
-        }).join('') + '</div>' + srcLine(b.source) + '</div>';
-    }
-    s.innerHTML = html;
-    return s;
+        return '<li><span>' + esc(n.text) + '</span>' + src(n.source) + '</li>';
+      }).join('') + '</ul>' +
+      '<div class="metric"><h3>' + esc(b.label) + '<span class="badge adv">advocacy estimate</span></h3>' +
+      '<p class="note">' + esc(b.caveat) + '</p><div class="bars">' +
+      b.series.map(function (x) {
+        var pct = Math.max(3, (x.value / max) * 100), inside = pct > 34;
+        return '<div class="bar"><div class="lab">' + esc(x.label) + '</div>' +
+          '<div class="track"><div class="fill" style="width:' + pct.toFixed(1) + '%"></div>' +
+          '<span class="val' + (inside ? ' inside' : '') + '">' + shortNum(x.value) + '</span></div></div>';
+      }).join('') + '</div>' + src(b.source) + '</div>';
+    return section('affected', 'The scale of it', a.heading, body);
   }
 
-  function secMeans(c) {
-    var s = el('section');
-    s.innerHTML = h2('06', 'What termination means') +
-      '<p class="lede">The practical consequences, separated from the political argument about whether it should have happened.</p>' +
-      '<ul class="pts">' + c.what_termination_means.map(function (p) {
-        return '<li><b>' + esc(p.point) + '</b><span>' + esc(p.detail) + '</span></li>';
-      }).join('') + '</ul>';
-    return s;
+  // ---------- 11. what happened ----------
+
+  function secStory(c) {
+    var w = c.what_happened;
+    var body = w.paragraphs.map(function (p) { return '<p class="story">' + esc(p) + '</p>'; }).join('') +
+      srcList(w.sources) +
+      '<details class="tl-toggle"><summary>See the full dated timeline</summary>' +
+      '<ul class="tl">' + c.timeline.map(function (t) {
+        var cite = t.url ? '<a href="' + esc(t.url) + '" rel="noopener">' + esc(t.cite) + '</a>' : esc(t.cite);
+        return '<li' + (t.key ? ' class="key"' : '') + '><div class="d">' + esc(date(t.date)) + '</div>' +
+          '<p class="e">' + esc(t.event) + '</p><div class="c">' + cite + '</div></li>';
+      }).join('') + '</ul></details>';
+    return section('story', 'For when you need the background', w.heading, body);
   }
 
-  function secPaths() {
-    var s = el('section');
-    s.innerHTML = h2('07', 'Paths forward') +
-      '<p class="lede">' + esc(D.paths.note) + '</p>' +
-      '<ul class="pts">' + D.paths.paths.map(function (p) {
-        return '<li><b>' + esc(p.name) + '</b><span>' + esc(p.constraint) + '</span>' +
-          '<p style="font-size:.9rem;color:var(--ink-2);margin:.5rem 0 0;max-width:none">' + esc(p.detail) + '</p>' +
-          srcLine(p.source) + '</li>';
-      }).join('') + '</ul>' + waitTable();
-    return s;
-  }
-
-  function waitTable() {
-    var w = D.wait;
-    var head = '<tr><th class="first">Category</th>' + w.columns.map(function (col) {
-      return '<th' + (col.highlight ? ' class="hl"' : '') + '>' + esc(col.label) + '</th>';
-    }).join('') + '</tr>';
-    var rows = w.categories.map(function (cat) {
-      var r = w.final_action_dates[cat.id];
-      return '<tr><td class="first"><b>' + esc(cat.id) + '</b> — ' + esc(cat.label) + '</td>' +
-        w.columns.map(function (col) {
-          return '<td class="num' + (col.highlight ? ' hl' : '') + '">' + esc(date(r[col.id])) + '</td>';
-        }).join('') + '</tr>';
-    }).join('');
-    return '<h3>How long the line is</h3>' +
-      '<p class="lede">' + esc(w.how_it_works) + '</p>' +
-      '<div class="tw"><table><thead>' + head + '</thead><tbody>' + rows + '</tbody></table></div>' +
-      '<p class="src">Final action dates, ' + esc(w.bulletin.month) + ' Visa Bulletin (' + esc(w.bulletin.issue) + '). ' +
-      '<a href="' + esc(w.bulletin.url) + '" rel="noopener">U.S. Department of State</a>, retrieved ' +
-      esc(date(w.bulletin.retrieved)) + '. A date shown is the priority date now being processed — a petition filed after it is still waiting.</p>';
-  }
-
-  function secContested(c) {
-    var s = el('section');
-    s.innerHTML = h2('08', 'What is contested') +
-      '<p class="lede">Each side’s position is stated as that side states it, with its own source. Where a court has since resolved the question, the resolution is noted separately.</p>' +
-      c.contested.map(function (q) {
-        return '<div class="contested"><h3>' + esc(q.question) + '</h3><div class="two">' +
-          '<div class="side gov"><h5>' + esc(q.government_label || "The government’s position") + '</h5><p>' + esc(q.government) + '</p>' +
-            srcLine(q.government_source) + '</div>' +
-          '<div class="side chal"><h5>' + esc(q.challengers_label || "The challengers’ position") + '</h5><p>' + esc(q.challengers) + '</p>' +
-            srcLine(q.challengers_source) + '</div></div>' +
-          (q.resolution ? '<p class="resolution"><b>Where it stands.</b> ' + esc(q.resolution) + '</p>' : '') +
-        '</div>';
-      }).join('');
-    return s;
-  }
-
-  function secLitigation(c) {
-    var s = el('section');
-    var extra = (c.related_programs || []).map(function (p) {
-      return '<div class="metric"><h3>' + esc(p.name) + '</h3>' +
-        '<p class="note">' + esc(p.summary) + '</p>' +
-        '<div class="bars">' + p.figures.map(function (f) {
-          return '<div class="bar"><div class="lab">' + esc(f.value) + '</div>' +
-            '<div class="track" style="background:none"><span class="val inside" style="color:var(--ink);left:0;font-weight:400">' +
-            esc(f.label) + (f.source.kind === 'advocacy' ? '<span class="badge adv">advocacy</span>' : '') +
-            '</span></div></div>';
-        }).join('') + '</div>' + flag(p.flag) +
-        '<p class="src"><a href="' + esc(p.url) + '" rel="noopener">' + esc(p.cite) + '</a></p></div>';
-    }).join('');
-    s.innerHTML = h2('09', 'Litigation') +
-      '<p class="lede">Cases are listed with their court and docket so anyone can check the record directly.</p>' +
-      c.litigation.map(function (l) {
-        return '<div class="case"><h4><a href="' + esc(l.url) + '" rel="noopener">' + esc(l.case) + '</a></h4>' +
-          '<p class="court">' + esc(l.court) + ' · ' + esc(l.docket) + '</p>' +
-          '<span class="st">' + esc(l.status) + '</span>' +
-          '<p class="sum">' + esc(l.summary) + '</p></div>';
-      }).join('') +
-      (extra ? '<h3>Related programs</h3>' + extra : '');
-    return s;
-  }
-
-  function secHelp() {
-    var o = D.orgs, s = el('section');
-    s.innerHTML = h2('10', 'Where to get help') +
-      '<p class="lede">' + esc(o.note) + '</p>' +
-      '<h3>Start with a directory</h3>' +
-      o.directories.map(orgCard).join('') +
-      '<h3>Organizations</h3>' +
-      o.organizations.map(orgCard).join('');
-    return s;
-  }
-  function orgCard(g) {
-    return '<div class="org"><h4><a href="' + esc(g.url) + '" rel="noopener">' + esc(g.name) + '</a></h4>' +
-      '<div class="where">' + esc(g.region || g.org) + '</div>' +
-      '<p>' + esc(g.what) + '</p>' +
-      '<div class="cost">' + esc(g.cost) + '</div>' +
-      (g.flag ? flag(g.flag) : '') + '</div>';
-  }
+  // ---------- 12. terms + 13. changes ----------
 
   function secTerms() {
-    var s = el('section');
-    s.innerHTML = h2('11', 'Terms') +
-      '<dl class="gloss">' + D.glossary.terms.map(function (t) {
+    var G = D.glossary;
+    var body = '<p class="lede">' + esc(G.lede) + '</p><dl class="gloss">' +
+      G.terms.map(function (t) {
         return '<div><dt>' + esc(t.term) + '</dt><dd>' + esc(t.def) + '</dd></div>';
       }).join('') + '</dl>';
-    return s;
+    return section('terms', 'Quick reference', G.heading, body);
   }
 
   function secChanges(c) {
-    var s = el('section');
-    s.innerHTML = h2('12', 'Sources and changes') +
-      '<p class="lede">Every figure on this page links to its source. This page is reviewed monthly; the log below records what changed and when. Entries are appended, never rewritten.</p>' +
+    var body = '<p class="lede">Every number on this page links to where it came from. The page is ' +
+      'reviewed monthly, and what changed is recorded here rather than quietly edited.</p>' +
       '<ul class="changes">' + c.changes.map(function (ch) {
         return '<li><b>' + esc(date(ch.date)) + '.</b> ' + esc(ch.text) + '</li>';
       }).join('') + '</ul>' +
-      '<p class="src">Page last verified ' + esc(date(c.updated)) +
-      '. Corrections are welcome at <a href="https://github.com/GoodDevCo/understand" rel="noopener">github.com/GoodDevCo/understand</a>.</p>';
-    return s;
+      '<p class="src">Last checked ' + esc(date(c.updated)) +
+      '. Something wrong? Tell us at <a href="https://github.com/GoodDevCo/understand" rel="noopener">' +
+      'github.com/GoodDevCo/understand</a>.</p>';
+    return section('changes', 'Keeping it honest', 'Where this comes from', body);
   }
 
-  // ---------- render ----------
+  // ---------- contents + render ----------
+
+  var TOC = [
+    ['line', 'What you can and cannot do'],
+    ['words', 'The four words people mix up'],
+    ['means', 'What changed for them'],
+    ['paths', 'What they might still do'],
+    ['scams', 'Warn them about notarios'],
+    ['help', 'Where to send them'],
+    ['accredit', 'Doing this properly'],
+    ['conditions', 'Why going back is not simple'],
+    ['affected', 'How many people'],
+    ['story', 'What happened'],
+    ['terms', 'Words you will hear']
+  ];
+
+  function toc() {
+    var d = el('nav', 'toc');
+    d.setAttribute('aria-label', 'Contents');
+    d.innerHTML = '<p class="kicker">On this page</p><ol>' + TOC.map(function (t) {
+      return '<li><a href="#' + t[0] + '">' + esc(t[1]) + '</a></li>';
+    }).join('') + '</ol><button class="print" type="button">Print this page</button>';
+    d.querySelector('.print').onclick = function () { window.print(); };
+    return d;
+  }
 
   function render(c) {
     var app = document.getElementById('app');
     app.innerHTML = '';
-    var banner = el('div', 'status-banner');
-    banner.innerHTML = '<p>' + esc(c.status_headline) + '</p>' +
-      '<div class="asof">Verified ' + esc(date(c.updated)) + '. Nothing on this page is legal advice.</div>';
-    app.appendChild(banner);
-    [secSixty(c), secStatuses(), secTimeline(c), secConditions(c), secAffected(c),
-     secMeans(c), secPaths(), secContested(c), secLitigation(c), secHelp(),
-     secTerms(), secChanges(c)].forEach(function (n) { app.appendChild(n); });
-    document.title = 'UnderSTAND — ' + c.name;
+    app.appendChild(secNow(c));
+    app.appendChild(toc());
+    [secLine(), secWords(), secMeans(c), secPaths(), secScams(), secHelp(), secAccredit(),
+     secConditions(c), secAffected(c), secStory(c), secTerms(), secChanges(c)]
+      .forEach(function (n) { app.appendChild(n); });
+    document.title = 'UnderSTAND — helping someone from ' + c.name;
   }
 
-  function nav(idx, current) {
+  function nav(idx, cur) {
     var n = document.getElementById('country-nav');
     n.innerHTML = '';
     idx.countries.forEach(function (c) {
       var b = el('button', null, esc(c.name));
       if (!c.published) { b.disabled = true; b.title = 'Not yet published'; }
       else {
-        b.setAttribute('aria-current', c.slug === current ? 'true' : 'false');
+        b.setAttribute('aria-current', c.slug === cur ? 'true' : 'false');
         b.onclick = function () { load(c.slug); };
       }
       n.appendChild(b);
     });
   }
 
-  function get(path) {
-    return fetch(path, { cache: 'no-cache' }).then(function (r) {
-      if (!r.ok) throw new Error(path + ' → ' + r.status);
+  function get(p) {
+    return fetch(p, { cache: 'no-cache' }).then(function (r) {
+      if (!r.ok) throw new Error(p + ' → ' + r.status);
       return r.json();
     });
   }
 
   function load(slug) {
     get('data/countries/' + slug + '.json').then(function (c) {
-      render(c);
-      nav(D.index, slug);
+      render(c); nav(D.index, slug);
       if (history.replaceState) history.replaceState(null, '', '#' + slug);
       window.scrollTo(0, 0);
     }).catch(fail);
@@ -351,10 +387,9 @@
 
   function fail(e) {
     document.getElementById('app').innerHTML =
-      '<p class="loading">Could not load the data files. If you are opening this ' +
-      'from your filesystem, browsers block local fetches — run a local server ' +
-      '(<code>python3 -m http.server</code>) or view the published site.<br><br>' +
-      '<small>' + esc(e.message) + '</small></p>';
+      '<p class="loading">Could not load the data files. If you opened this from your own ' +
+      'computer, browsers block that — run <code>python3 -m http.server</code> or use the ' +
+      'published site.<br><br><small>' + esc(e.message) + '</small></p>';
   }
 
   Promise.all([
@@ -363,10 +398,11 @@
     get('data/shared/paths.json'),
     get('data/shared/glossary.json'),
     get('data/shared/orgs.json'),
-    get('data/shared/waittimes.json')
+    get('data/shared/waittimes.json'),
+    get('data/shared/helping.json')
   ]).then(function (r) {
-    D.index = r[0]; D.statuses = r[1]; D.paths = r[2];
-    D.glossary = r[3]; D.orgs = r[4]; D.wait = r[5];
+    D.index = r[0]; D.statuses = r[1]; D.paths = r[2]; D.glossary = r[3];
+    D.orgs = r[4]; D.wait = r[5]; D.helping = r[6];
     var want = location.hash.replace('#', '');
     var ok = D.index.countries.some(function (c) { return c.slug === want && c.published; });
     load(ok ? want : D.index.default);
