@@ -6,26 +6,88 @@
     "url": "https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin/2026/visa-bulletin-for-september-2026.html",
     "retrieved": "2026-09-03"
   },
-  "how_it_works": "Every capped immigrant-visa petition gets a priority date, and visas are issued in the order petitions were filed. A per-country limit set at 7 percent of the annual total means high-demand countries back up on their own schedules, which is why China, India, Mexico and the Philippines appear in separate columns. Haiti is not listed separately and falls under All Chargeability Areas. Immediate relatives of U.S. citizens — spouses, minor children and parents — are exempt from these caps entirely.",
+  "how_it_works": "People ask why someone does not just get in line. This is the line. Each capped petition gets a place based on the day it was filed, and the table shows which day the government is working on now. Anything filed after that date is still waiting. A brother or sister of a U.S. citizen from Haiti filed in late 2011 is only now being reached — about fifteen years. For Mexico it is closer to twenty-five. Haiti is not listed separately, so it falls under \"all areas.\" Spouses, minor children and parents of U.S. citizens are not capped and do not appear here at all.",
   "categories": [
-    { "id": "F1", "label": "Unmarried adult sons and daughters of U.S. citizens" },
-    { "id": "F2A", "label": "Spouses and minor children of permanent residents" },
-    { "id": "F2B", "label": "Unmarried adult sons and daughters of permanent residents" },
-    { "id": "F3", "label": "Married sons and daughters of U.S. citizens" },
-    { "id": "F4", "label": "Siblings of adult U.S. citizens" }
+    {
+      "id": "F1",
+      "label": "Unmarried adult sons and daughters of U.S. citizens"
+    },
+    {
+      "id": "F2A",
+      "label": "Spouses and minor children of permanent residents"
+    },
+    {
+      "id": "F2B",
+      "label": "Unmarried adult sons and daughters of permanent residents"
+    },
+    {
+      "id": "F3",
+      "label": "Married sons and daughters of U.S. citizens"
+    },
+    {
+      "id": "F4",
+      "label": "Siblings of adult U.S. citizens"
+    }
   ],
   "columns": [
-    { "id": "all", "label": "All areas (incl. Haiti)", "highlight": true },
-    { "id": "china", "label": "China" },
-    { "id": "india", "label": "India" },
-    { "id": "mexico", "label": "Mexico" },
-    { "id": "philippines", "label": "Philippines" }
+    {
+      "id": "all",
+      "label": "All areas (incl. Haiti)",
+      "highlight": true
+    },
+    {
+      "id": "china",
+      "label": "China"
+    },
+    {
+      "id": "india",
+      "label": "India"
+    },
+    {
+      "id": "mexico",
+      "label": "Mexico"
+    },
+    {
+      "id": "philippines",
+      "label": "Philippines"
+    }
   ],
   "final_action_dates": {
-    "F1":  { "all": "2020-01-22", "china": "2020-01-22", "india": "2020-01-22", "mexico": "2008-01-01", "philippines": "2013-05-01" },
-    "F2A": { "all": "2026-08-22", "china": "2026-08-22", "india": "2026-08-22", "mexico": "2025-08-22", "philippines": "2026-08-22" },
-    "F2B": { "all": "2019-08-22", "china": "2019-08-22", "india": "2019-08-22", "mexico": "2009-02-15", "philippines": "2013-06-01" },
-    "F3":  { "all": "2014-10-22", "china": "2014-10-22", "india": "2014-10-22", "mexico": "2001-07-01", "philippines": "2006-02-22" },
-    "F4":  { "all": "2011-10-22", "china": "2011-10-22", "india": "2006-11-01", "mexico": "2001-04-08", "philippines": "2007-08-22" }
-  }
+    "F1": {
+      "all": "2020-01-22",
+      "china": "2020-01-22",
+      "india": "2020-01-22",
+      "mexico": "2008-01-01",
+      "philippines": "2013-05-01"
+    },
+    "F2A": {
+      "all": "2026-08-22",
+      "china": "2026-08-22",
+      "india": "2026-08-22",
+      "mexico": "2025-08-22",
+      "philippines": "2026-08-22"
+    },
+    "F2B": {
+      "all": "2019-08-22",
+      "china": "2019-08-22",
+      "india": "2019-08-22",
+      "mexico": "2009-02-15",
+      "philippines": "2013-06-01"
+    },
+    "F3": {
+      "all": "2014-10-22",
+      "china": "2014-10-22",
+      "india": "2014-10-22",
+      "mexico": "2001-07-01",
+      "philippines": "2006-02-22"
+    },
+    "F4": {
+      "all": "2011-10-22",
+      "china": "2011-10-22",
+      "india": "2006-11-01",
+      "mexico": "2001-04-08",
+      "philippines": "2007-08-22"
+    }
+  },
+  "heading": "How long the line really is"
 }

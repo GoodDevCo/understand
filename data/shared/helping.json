@@ -1,0 +1,160 @@
+{
+  "updated": "2026-09-03",
+  "line": {
+    "heading": "The line you must not cross",
+    "lede": "There is a legal line between helping someone and practicing immigration law. It is not about intentions and it is not about how much you know. Crossing it can hurt the person you are trying to help — a wrong form or a missed deadline can end a case — and it is against federal law.",
+    "rule": "Only a licensed attorney, or an accredited representative working for an organization the Department of Justice has recognized, may give immigration legal advice.",
+    "rule_source": {
+      "org": "USCIS, Unauthorized Practice of Immigration Law",
+      "url": "https://www.uscis.gov/sites/default/files/document/outreach-engagements/USCIS_Institute_of_Museum_and_Library_Services_Webinar-The_Unauthorized_Practice_of_Immigration_Law.pdf",
+      "as_of": "2023-03-23"
+    },
+    "test": "The test in the regulations is judgment. Writing down what someone tells you, in the blank spaces on a form, is clerical work and is allowed. Deciding which form, which relief, how to answer, what to attach, or when to file means applying law to facts — that is practicing law.",
+    "test_source": {
+      "org": "8 CFR 1001.1",
+      "url": "https://www.law.cornell.edu/cfr/text/8/1001.1",
+      "as_of": "2026-09-03"
+    },
+    "can": [
+      "Translate and interpret.",
+      "Write down what the person tells you in the blank spaces on a form.",
+      "Hand someone a printed government form.",
+      "Repeat information the government has published, and show them where it came from.",
+      "Drive someone to an appointment and sit with them at an interview.",
+      "Help them gather and copy their own documents.",
+      "Find them a real lawyer or accredited representative, and help them get there."
+    ],
+    "cannot": [
+      "Tell someone which form to file, or which relief they qualify for.",
+      "Advise them how to answer a question on a form.",
+      "Tell them what documents to include, or when to file.",
+      "Predict what will happen in their case.",
+      "Speak for them before USCIS, an immigration judge, or the Board.",
+      "Let them sign a blank form.",
+      "Charge more than a nominal fee for filling in a form, or present yourself as qualified in immigration matters."
+    ],
+    "clergy_note": {
+      "text": "A \"reputable individual of good moral character\" may appear in one specific case, at the person's request, for free, with a written declaration to that effect, if they already have a relationship with the person — the regulation lists a relative, neighbor, clergyman, business associate or personal friend — and if the official hearing the case permits it. It is case by case, unpaid, and at the adjudicator's discretion. It is not a general licence to represent people, and it is not a substitute for accreditation.",
+      "source": {
+        "org": "8 CFR 1292.1(a)(3)",
+        "url": "https://www.ecfr.gov/current/title-8/chapter-V/subchapter-B/part-1292/section-1292.1",
+        "as_of": "2026-09-03"
+      }
+    }
+  },
+  "scams": {
+    "heading": "Warn them about notarios",
+    "lede": "In Haiti, and across Latin America and Europe, a notary is a trained legal professional who can represent people before the government. In the United States a notary public can only witness a signature. That single mistranslation is the most common way immigrants are defrauded.",
+    "lede_source": {
+      "org": "American Bar Association",
+      "url": "https://www.americanbar.org/groups/public_interest/immigration/projects_initiatives/fightnotariofraud/about_notario_fraud/",
+      "as_of": "2024-12-12"
+    },
+    "official_line": "A notary public, notario, or notario público is NOT an attorney or an accredited representative and CANNOT provide legal advice.",
+    "official_source": {
+      "org": "DOJ EOIR, Are You a Victim of Fraud?",
+      "url": "https://www.justice.gov/eoir/page/file/1480746/dl",
+      "as_of": "2022-01"
+    },
+    "signs": [
+      {
+        "sign": "They guarantee a result.",
+        "why": "Nobody can. Not a lawyer, not anyone."
+      },
+      {
+        "sign": "They claim a special relationship with USCIS or the immigration court.",
+        "why": "No such relationship exists."
+      },
+      {
+        "sign": "They ask the person to sign a blank form, or a form with anything untrue on it.",
+        "why": "The person signing is the one held responsible for what it says."
+      },
+      {
+        "sign": "They charge for blank government forms.",
+        "why": "Every USCIS form is free to download."
+      },
+      {
+        "sign": "They want payment by gift card, wire transfer, cryptocurrency, or a payment app.",
+        "why": "Legitimate offices give a written contract and a receipt."
+      },
+      {
+        "sign": "The website is not a .gov address but looks official.",
+        "why": "Only .gov is the government."
+      },
+      {
+        "sign": "First contact came out of nowhere on WhatsApp or social media.",
+        "why": "Impostors have used real attorneys' names and photographs."
+      }
+    ],
+    "signs_sources": [
+      {
+        "org": "FTC",
+        "url": "https://consumer.ftc.gov/articles/how-avoid-immigration-scams-and-get-real-help",
+        "as_of": "2023-11"
+      },
+      {
+        "org": "DOJ EOIR",
+        "url": "https://www.justice.gov/eoir/page/file/1480746/dl",
+        "as_of": "2022-01"
+      },
+      {
+        "org": "American Bar Association fraud alert",
+        "url": "https://www.americanbar.org/news/abanews/aba-news-archives/2025/08/aba-issues-alert-regarding-fraudulent-immigration-practices/",
+        "as_of": "2025-08-26"
+      }
+    ],
+    "reporting": [
+      {
+        "name": "Report to the FTC",
+        "what": "Federal consumer fraud intake.",
+        "url": "https://reportfraud.ftc.gov"
+      },
+      {
+        "name": "Report to EOIR",
+        "what": "For fraud, scams, and the unauthorized practice of immigration law. Form EOIR-44.",
+        "url": "https://www.justice.gov/eoir/filing-complaint-eoir-fraud-and-abuse-prevention-program"
+      },
+      {
+        "name": "Report to USCIS",
+        "what": "For fraud tied to an application already filed with USCIS.",
+        "url": "https://www.uscis.gov/scams-fraud-and-misconduct/avoid-scams/report-immigration-scams"
+      },
+      {
+        "name": "Your state attorney general",
+        "what": "State consumer protection offices take these complaints too.",
+        "url": "https://www.usa.gov/state-attorney-general"
+      }
+    ]
+  },
+  "accreditation": {
+    "heading": "If your church wants to do this properly",
+    "lede": "A congregation does not need to hire a lawyer to give real immigration legal help. The Department of Justice recognizes nonprofit religious and charitable organizations, and accredits individuals inside them — staff or volunteers, not attorneys — to represent people. This is the route from handing out flyers to actually filing cases.",
+    "steps": [
+      {
+        "term": "Recognition",
+        "def": "The organization is approved. It must be a nonprofit religious, charitable or social-service organization serving primarily low-income and indigent clients, be federally tax-exempt, have at least one accredited representative, and have access to adequate knowledge and experience in immigration law. First approval lasts two years; renewals last six."
+      },
+      {
+        "term": "Accreditation",
+        "def": "A specific person inside that organization is approved. They must not be an attorney, must have good character, and must have broad knowledge and adequate experience in immigration law. Accreditation lasts three years."
+      },
+      {
+        "term": "Partial accreditation",
+        "def": "Lets that person represent clients before DHS and USCIS only."
+      },
+      {
+        "term": "Full accreditation",
+        "def": "Adds the immigration courts and the Board of Immigration Appeals. It requires trial and appellate training."
+      }
+    ],
+    "how": "Organizations apply on Form EOIR-31 and individuals on Form EOIR-31A, submitted to the Executive Office for Immigration Review with a copy to the relevant USCIS District Director.",
+    "source": {
+      "org": "8 CFR 1292.11 and 1292.12",
+      "url": "https://www.ecfr.gov/current/title-8/chapter-V/subchapter-B/part-1292",
+      "as_of": "2026-09-03"
+    },
+    "program_url": "https://www.justice.gov/eoir/recognition-and-accreditation-program",
+    "roster_url": "https://www.justice.gov/eoir/recognition-accreditation-roster-reports",
+    "roster_note": "The public roster of recognized organizations and accredited representatives showed a last-updated date of April 28, 2025 when this page was written. Someone missing from it is not necessarily unaccredited — check with the organization."
+  }
+}

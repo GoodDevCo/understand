@@ -1,6 +1,6 @@
 {
   "updated": "2026-09-03",
-  "note": "Directories first. Contact details change and stale details do the most harm to someone in a hurry, so each entry links to the organization's own page rather than reproducing a phone number here. Inclusion is not an endorsement.",
+  "note": "Your most useful act is usually a warm handoff to someone who can actually give legal advice. Start with a directory — it stays current in a way any list on a web page cannot. Phone numbers and addresses change, and a wrong one wastes a trip somebody could not afford to make, so each entry links to the organization's own page rather than repeating details here.",
   "directories": [
     {
       "name": "EOIR List of Pro Bono Legal Service Providers",
@@ -9,6 +9,15 @@
       "url": "https://www.justice.gov/eoir/list-pro-bono-legal-service-providers",
       "cost": "Free",
       "verified": "2026-09-03"
+    },
+    {
+      "name": "DOJ roster of accredited representatives",
+      "org": "U.S. Department of Justice",
+      "what": "Non-attorneys the government has approved to represent people, listed by state and city, along with the organizations they work for. This is how you check whether someone offering help is actually authorized.",
+      "url": "https://www.justice.gov/eoir/recognition-accreditation-roster-reports",
+      "cost": "Free to search",
+      "verified": "2026-09-03",
+      "flag": "The roster showed a last-updated date of April 28, 2025. Someone missing from it is not necessarily unaccredited — ask the organization directly."
     },
     {
       "name": "National Immigration Legal Services Directory",
@@ -70,5 +79,6 @@
       "cost": "Hotline free",
       "verified": "2026-09-03"
     }
-  ]
+  ],
+  "heading": "Where to send them"
 }
