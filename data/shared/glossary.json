@@ -1,0 +1,18 @@
+{
+  "updated": "2026-09-03",
+  "terms": [
+    { "term": "Adjustment of status", "def": "Applying for a green card from inside the United States, rather than at a consulate abroad." },
+    { "term": "Advance parole / Form I-512T", "def": "Permission for someone without a visa to travel abroad and be readmitted. For TPS holders the document is Form I-512T, and being admitted on it can matter a great deal for a later green-card application." },
+    { "term": "Chargeability", "def": "The country a person counts against for immigrant-visa numbers, usually their country of birth. Haiti is not listed separately in the Visa Bulletin, so it falls under \"All Chargeability Areas.\"" },
+    { "term": "Designation", "def": "The Secretary of Homeland Security's decision that conditions in a country warrant TPS. Designations are made for 6 to 18 months and must be reviewed before they expire." },
+    { "term": "EAD", "def": "Employment Authorization Document, Form I-766. A work card, not a status." },
+    { "term": "Extension vs. redesignation", "def": "An extension continues TPS for people who already have it. A redesignation also opens it to people who arrived more recently, up to a new cutoff date." },
+    { "term": "Final action date", "def": "The date in the Visa Bulletin at which a green card may actually be approved for a given category and country." },
+    { "term": "Inspected and admitted or paroled", "def": "The entry requirement in INA 245(a). Someone who crossed without being inspected has not met it, which is why the travel-authorization question matters." },
+    { "term": "Priority date", "def": "The date a petition was filed. It fixes a person's place in line." },
+    { "term": "Removal proceedings", "def": "The immigration court process, run by EOIR within the Department of Justice, that determines whether a person may be removed from the United States." },
+    { "term": "Termination", "def": "The Secretary's decision to end a country's TPS designation. By statute it takes effect no sooner than 60 days after publication in the Federal Register." },
+    { "term": "Vacatur", "def": "A decision undoing a prior action. In February 2025 DHS partially vacated the 2024 Haiti extension; a federal court later held the Secretary lacked authority to do that." },
+    { "term": "Wind-down period", "def": "The gap between publication of a termination notice and its effective date. It is a statutory minimum on the notice, not a grant of extra benefits." }
+  ]
+}

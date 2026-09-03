@@ -1,0 +1,116 @@
+{
+  "updated": "2026-09-03",
+  "note": "Plain-language summaries of legal categories. Each is sourced to the agency that grants or defines it. Nothing here is legal advice.",
+  "statuses": [
+    {
+      "id": "refugee",
+      "name": "Refugee",
+      "short": "Protection granted to someone who is outside the United States.",
+      "what": "A person outside the U.S. who shows they were persecuted, or fear persecution, because of race, religion, nationality, political opinion, or membership in a particular social group.",
+      "granted_by": "USCIS officers interviewing abroad, on referral from UNHCR, U.S. embassies, or designated NGOs.",
+      "work": "Yes, on arrival.",
+      "green_card": "Yes — must apply one year after admission.",
+      "duration": "Until adjustment to permanent residence.",
+      "source": { "org": "USCIS", "url": "https://www.uscis.gov/humanitarian/refugees-and-asylum/refugees", "as_of": "2026-09-03" }
+    },
+    {
+      "id": "asylee",
+      "name": "Asylee",
+      "short": "The same protection as a refugee, but claimed from inside the U.S.",
+      "what": "Same persecution standard as a refugee, claimed from inside the United States or at a port of entry. Affirmative asylum is filed with USCIS by someone not in removal proceedings; defensive asylum is raised as a defense before an immigration judge.",
+      "granted_by": "A USCIS asylum officer (affirmative) or an EOIR immigration judge (defensive).",
+      "work": "Yes, on grant.",
+      "green_card": "Yes — may apply one year after the grant.",
+      "duration": "Indefinite, until adjusted or terminated.",
+      "source": { "org": "USCIS", "url": "https://www.uscis.gov/humanitarian/refugees-and-asylum/asylum", "as_of": "2026-09-03" }
+    },
+    {
+      "id": "tps",
+      "name": "Temporary Protected Status (TPS)",
+      "short": "Country-based, temporary, and not a path to a green card.",
+      "what": "Protection for nationals of a country the Secretary of Homeland Security has designated because of ongoing armed conflict, a natural disaster or epidemic, or other extraordinary and temporary conditions. It is granted by country, not by individual circumstance.",
+      "granted_by": "The Secretary of Homeland Security designates the country; USCIS grants status to individuals.",
+      "work": "Yes, authorized incident to status.",
+      "green_card": "No. DHS states plainly: \"The granting of Temporary Protected Status does not result in or lead to lawful permanent resident status or any other immigration status.\"",
+      "duration": "6 to 18 months per designation, extendable at the Secretary's discretion.",
+      "source": { "org": "DHS, 90 FR 54733", "url": "https://www.federalregister.gov/documents/2025/11/28/2025-21379/termination-of-the-designation-of-haiti-for-temporary-protected-status", "as_of": "2025-11-28" }
+    },
+    {
+      "id": "parole",
+      "name": "Humanitarian parole",
+      "short": "Permission to be here — but legally, not an admission.",
+      "what": "A temporary, discretionary permission to enter or remain in the United States for urgent humanitarian reasons or significant public benefit. Parole is by definition not an admission. It does, however, satisfy the \"paroled\" requirement in INA 245(a), which matters for adjusting status later.",
+      "granted_by": "DHS — USCIS or CBP — under INA 212(d)(5).",
+      "work": "Only after separately applying for an Employment Authorization Document.",
+      "green_card": "Not by itself.",
+      "duration": "Set case by case.",
+      "source": { "org": "USCIS Policy Manual, Vol. 7 Pt. B Ch. 2", "url": "https://www.uscis.gov/policy-manual/volume-7-part-b-chapter-2", "as_of": "2026-09-03" }
+    },
+    {
+      "id": "ded",
+      "name": "Deferred Enforced Departure (DED)",
+      "short": "A presidential decision not to remove people, not a status.",
+      "what": "People covered by DED are not subject to removal for a designated period. DED is not a formal immigration status; it is an exercise of the President's authority over foreign relations.",
+      "granted_by": "The President, by directive.",
+      "work": "May apply for an EAD if the directive allows it.",
+      "green_card": "No.",
+      "duration": "As set by the presidential directive.",
+      "source": { "org": "USCIS", "url": "https://www.uscis.gov/humanitarian/deferred-enforced-departure", "as_of": "2026-09-03" }
+    },
+    {
+      "id": "withholding",
+      "name": "Withholding of removal",
+      "short": "You cannot be sent to the dangerous country — but you gain no status.",
+      "what": "Bars removal to the country of danger only. The standard is higher than asylum: the applicant must show it is more likely than not that their life or freedom would be threatened on a protected ground.",
+      "granted_by": "An EOIR immigration judge only.",
+      "work": "Yes, with an EAD.",
+      "green_card": "No pathway to permanent residence.",
+      "duration": "Indefinite, but confers no status and no derivative benefits for family members.",
+      "source": { "org": "DOJ EOIR", "url": "https://www.justice.gov/eoir/asylum-withholding-removal-convention-against-torture", "as_of": "2026-09-03" }
+    },
+    {
+      "id": "cat",
+      "name": "Convention Against Torture protection",
+      "short": "Protection from being returned to torture. No protected ground required.",
+      "what": "The applicant must show it is more likely than not that they would be tortured if removed. Unlike asylum, no protected ground is required. Two forms exist: withholding under CAT, and deferral of removal for people barred from withholding — deferral is narrower and the government may seek to end it at any time.",
+      "granted_by": "An EOIR immigration judge only.",
+      "work": "Yes for withholding under CAT; deferral is narrower.",
+      "green_card": "No.",
+      "duration": "Indefinite; deferral is revocable.",
+      "source": { "org": "DOJ EOIR", "url": "https://www.justice.gov/eoir/asylum-withholding-removal-convention-against-torture", "as_of": "2026-09-03" }
+    },
+    {
+      "id": "lpr",
+      "name": "Lawful permanent resident",
+      "short": "The green card.",
+      "what": "The status of having been lawfully accorded the privilege of residing permanently in the United States as an immigrant, that status not having changed.",
+      "granted_by": "USCIS (adjustment of status) or the State Department (consular immigrant visa).",
+      "work": "Yes, unrestricted.",
+      "green_card": "This is it.",
+      "duration": "Indefinite; the card itself renews every ten years.",
+      "source": { "org": "8 CFR 1.2", "url": "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-A/part-1/section-1.2", "as_of": "2026-09-03" }
+    },
+    {
+      "id": "undocumented",
+      "name": "Undocumented / unlawful presence",
+      "short": "Two different legal ideas that are often confused.",
+      "what": "Unlawful status means a person entered without inspection and admission or parole, or their status expired or was revoked. Unlawful presence is a separate clock under INA 212(a)(9)(B) that triggers reentry bars: more than 180 days but under a year, then departure, triggers a 3-year bar; a year or more triggers a 10-year bar. The clock is tolled while a person is under 18 and while a bona fide asylum application is pending.",
+      "granted_by": "Not a status anyone grants.",
+      "work": "No.",
+      "green_card": "Not without curing the bar or qualifying for a waiver or exemption.",
+      "duration": "n/a",
+      "source": { "org": "8 U.S.C. 1182", "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1182&num=0&edition=prelim", "as_of": "2026-09-03" }
+    },
+    {
+      "id": "ead",
+      "name": "Employment Authorization Document (EAD)",
+      "short": "A work card. It is not a status.",
+      "what": "Form I-766 evidences permission to work. Under 8 CFR 274a.12 it comes in three tiers: (a) authorized incident to status, which covers permanent residents, refugees, asylees and TPS holders; (b) employer-specific categories; and (c) categories that must be applied for, such as asylum applicants and parolees. Losing the underlying status ends the work authorization.",
+      "granted_by": "USCIS.",
+      "work": "It is the work document.",
+      "green_card": "No.",
+      "duration": "Varies by category.",
+      "source": { "org": "8 CFR 274a.12", "url": "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-274a/subpart-B/section-274a.12", "as_of": "2026-09-03" }
+    }
+  ]
+}

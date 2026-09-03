@@ -1,0 +1,74 @@
+{
+  "updated": "2026-09-03",
+  "note": "Directories first. Contact details change and stale details do the most harm to someone in a hurry, so each entry links to the organization's own page rather than reproducing a phone number here. Inclusion is not an endorsement.",
+  "directories": [
+    {
+      "name": "EOIR List of Pro Bono Legal Service Providers",
+      "org": "U.S. Department of Justice",
+      "what": "The official, court-by-court list of organizations and attorneys who have committed to at least 50 hours a year of free legal services. Published quarterly in January, April, July and October.",
+      "url": "https://www.justice.gov/eoir/list-pro-bono-legal-service-providers",
+      "cost": "Free",
+      "verified": "2026-09-03"
+    },
+    {
+      "name": "National Immigration Legal Services Directory",
+      "org": "Immigration Advocates Network and Scale Justice",
+      "what": "Searchable by state, county, zip code or detention facility. Only nonprofit organizations providing free or low-cost immigration legal services are listed.",
+      "url": "https://www.immigrationadvocates.org/legaldirectory/",
+      "cost": "Free or low-cost only",
+      "verified": "2026-09-03"
+    }
+  ],
+  "organizations": [
+    {
+      "name": "Catholic Legal Services, Archdiocese of Miami",
+      "region": "Miami-Dade and Broward, Florida",
+      "what": "Nonprofit law firm representing low-income immigrants. Work permits, applications and removal defense. Formed in part from the G.W.L. Haitian legal services project.",
+      "url": "https://cclsmiami.org/",
+      "cost": "Free or low-cost",
+      "verified": "2026-09-03"
+    },
+    {
+      "name": "Americans for Immigrant Justice",
+      "region": "Florida and national",
+      "what": "Nonprofit law firm doing direct representation, impact litigation and advocacy. Recruits pro bono attorneys.",
+      "url": "https://aijustice.org/",
+      "cost": "Free",
+      "verified": "2026-09-03"
+    },
+    {
+      "name": "Haitian Bridge Alliance",
+      "region": "National, based in San Diego",
+      "what": "Haiti-focused advocacy organization providing pro bono legal support and a community hotline. Active on Haiti TPS.",
+      "url": "https://haitianbridgealliance.org/",
+      "cost": "Free",
+      "verified": "2026-09-03"
+    },
+    {
+      "name": "Sant La Haitian Neighborhood Center",
+      "region": "North Miami, Florida",
+      "what": "Community center serving South Florida's Haitian-American community, with Creole-language programming and a TPS resource center.",
+      "url": "https://www.santla.org/",
+      "cost": "Not stated on the organization's site",
+      "verified": "2026-09-03",
+      "flag": "Whether this is direct legal representation or referral is not stated publicly. Call before relying on it."
+    },
+    {
+      "name": "Family Action Network Movement (FANM)",
+      "region": "Miami, Florida",
+      "what": "Community organization with immigration, citizenship and policy programs, adult education and housing advocacy.",
+      "url": "https://www.fanm.org/",
+      "cost": "Not stated on the organization's site",
+      "verified": "2026-09-03",
+      "flag": "Legal scope and cost are not stated publicly. Call before relying on it."
+    },
+    {
+      "name": "Florida Immigrant Coalition",
+      "region": "Statewide, Florida",
+      "what": "Grassroots coalition running legal services, advocacy and a free hotline.",
+      "url": "https://floridaimmigrant.org/",
+      "cost": "Hotline free",
+      "verified": "2026-09-03"
+    }
+  ]
+}
