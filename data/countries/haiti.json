@@ -12,7 +12,7 @@
     "Their work permits ended too. The date printed on the card does not matter; the card is only good as long as the status underneath it.",
     "TPS never led to a green card. Anyone who has been waiting for it to turn into one was misinformed.",
     "There may still be options — and losing TPS does not automatically close off asylum, which surprises almost everyone.",
-    "You cannot tell them which option is theirs. Get them to a lawyer or an accredited representative fast."
+    "Their work permit, their protection from removal and their status all ended on the same day — but a case may still be possible, and speed matters."
   ],
   "timeline": [
     {
@@ -560,5 +560,88 @@
       "url": "https://www.federalregister.gov/documents/2025/03/25/2025-05128/termination-of-parole-processes-for-cubans-haitians-nicaraguans-and-venezuelans",
       "as_of": "2025-03-25"
     }
-  }
+  },
+  "critical_questions": {
+    "heading": "Two questions worth asking",
+    "lede": "Both of these are specific to people who held TPS, and both are routinely missed. Ask them, write the answers down, and make sure the lawyer hears them. Do not try to work out what they mean.",
+    "items": [
+      {
+        "title": "Ask whether they ever travelled on a TPS travel document.",
+        "body": "This is the single question most likely to change someone's case. Many people who had TPS first entered the country without being inspected at a border post. That blocks them from applying for a green card from inside the United States, even if they marry a U.S. citizen. But since July 2022, a TPS holder who travelled abroad on Form I-512T and was let back in is treated as having been inspected and admitted. That one trip can turn an impossible case into a workable one.",
+        "why": "Ask it, write down the answer, and make sure the lawyer hears it. Do not try to work out what it means.",
+        "source": {
+          "org": "USCIS Policy Alert, TPS and Adjustment of Status",
+          "url": "https://www.uscis.gov/sites/default/files/document/policy-manual-updates/20220701-TPSAndAOS.pdf",
+          "as_of": "2022-07-01"
+        }
+      },
+      {
+        "title": "Losing TPS does not automatically close off asylum.",
+        "body": "Asylum normally has to be filed within one year of arriving, and people who have been here a decade assume that door shut long ago. But the regulation lists holding TPS as an extraordinary circumstance that excuses a late filing, as long as they file within a reasonable period after it ends. Many people do not know this, and some are told the opposite.",
+        "why": "The word that matters is soon. A reasonable period is not measured in years.",
+        "source": {
+          "org": "8 CFR 208.4(a)(5)(iv)",
+          "url": "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-208/subject-group-ECFR59c76d3838fbb98/section-208.4",
+          "as_of": "2026-09-03"
+        }
+      }
+    ]
+  },
+  "orgs": {
+    "heading": "Organizations serving Haitians",
+    "note": "These serve the Haitian community, most of them in South Florida where the majority of Haitian TPS holders live. Inclusion is not an endorsement. Details change, so each links to the organization's own page rather than repeating a phone number here.",
+    "list": [
+      {
+        "name": "Catholic Legal Services, Archdiocese of Miami",
+        "region": "Miami-Dade and Broward, Florida",
+        "what": "Nonprofit law firm representing low-income immigrants. Work permits, applications and removal defense. Formed in part from the G.W.L. Haitian legal services project.",
+        "url": "https://cclsmiami.org/",
+        "cost": "Free or low-cost",
+        "verified": "2026-09-03"
+      },
+      {
+        "name": "Americans for Immigrant Justice",
+        "region": "Florida and national",
+        "what": "Nonprofit law firm doing direct representation, impact litigation and advocacy. Recruits pro bono attorneys.",
+        "url": "https://aijustice.org/",
+        "cost": "Free",
+        "verified": "2026-09-03"
+      },
+      {
+        "name": "Haitian Bridge Alliance",
+        "region": "National, based in San Diego",
+        "what": "Haiti-focused advocacy organization providing pro bono legal support and a community hotline. Active on Haiti TPS.",
+        "url": "https://haitianbridgealliance.org/",
+        "cost": "Free",
+        "verified": "2026-09-03"
+      },
+      {
+        "name": "Sant La Haitian Neighborhood Center",
+        "region": "North Miami, Florida",
+        "what": "Community center serving South Florida's Haitian-American community, with Creole-language programming and a TPS resource center.",
+        "url": "https://www.santla.org/",
+        "cost": "Not stated on the organization's site",
+        "verified": "2026-09-03",
+        "flag": "Whether this is direct legal representation or referral is not stated publicly. Call before relying on it."
+      },
+      {
+        "name": "Family Action Network Movement (FANM)",
+        "region": "Miami, Florida",
+        "what": "Community organization with immigration, citizenship and policy programs, adult education and housing advocacy.",
+        "url": "https://www.fanm.org/",
+        "cost": "Not stated on the organization's site",
+        "verified": "2026-09-03",
+        "flag": "Legal scope and cost are not stated publicly. Call before relying on it."
+      },
+      {
+        "name": "Florida Immigrant Coalition",
+        "region": "Statewide, Florida",
+        "what": "Grassroots coalition running legal services, advocacy and a free hotline.",
+        "url": "https://floridaimmigrant.org/",
+        "cost": "Hotline free",
+        "verified": "2026-09-03"
+      }
+    ]
+  },
+  "relief_note": "The general routes — asylum, family and employment petitions, U and T visas, VAWA — are described on the How to help page, along with the wait times. What follows is what is specific to someone who had Haitian TPS."
 }
