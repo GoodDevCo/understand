@@ -236,3 +236,11 @@ td.hl,th.hl{background:var(--accent-soft)}
   .advisory{border-color:#4d2e28}
   .bar .val.inside{color:#0d1f21}
 }
+
+/* guide tab + cross links */
+.countries .guide-tab{font-weight:600;color:var(--accent)}
+.countries .guide-tab[aria-current="true"]{color:var(--ink)}
+.nav-div{display:inline-block;width:1px;background:var(--line);margin:.4rem .5rem;align-self:stretch}
+.crosslink{margin:1.1rem 0 0;padding:.75rem 1rem;background:var(--card);border:1px dashed var(--line-2);
+  border-radius:7px;font-size:.95rem;color:var(--ink-2);max-width:44rem}
+.crosslink a{font-weight:600}

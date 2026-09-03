@@ -145,3 +145,6 @@ a{color:#000;text-decoration:none}
 .foot{border-top:1pt solid #000;background:none;margin-top:12pt;padding:6pt 0 0;break-inside:avoid}
 .foot p{font-size:8.5pt;max-width:none;margin-bottom:4pt}
 .foot .big{font-size:9.5pt}
+
+.crosslink{border:none;padding:0;margin:6pt 0 0;font-size:8.5pt;font-style:italic;max-width:none}
+.nav-div{display:none}
