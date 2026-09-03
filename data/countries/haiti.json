@@ -1,0 +1,242 @@
+{
+  "slug": "haiti",
+  "schema_version": 1,
+  "name": "Haiti",
+  "demonym": "Haitian",
+  "updated": "2026-09-03",
+  "status_headline": "TPS for Haiti has been terminated. As of September 3, 2026 no court order is holding it in place.",
+
+  "in_sixty_seconds": [
+    "Temporary Protected Status for Haiti ended. DHS published the termination on November 28, 2025, effective February 3, 2026.",
+    "A federal judge stayed it on February 2, 2026. The Supreme Court reversed on June 25, 2026, and the stay was lifted on August 5, 2026.",
+    "DHS counted 352,959 Haitian nationals holding TPS when it published the termination notice.",
+    "TPS never led to a green card. DHS states it \"does not result in or lead to lawful permanent resident status or any other immigration status.\"",
+    "Losing TPS does not automatically close off asylum. A written regulation excuses the one-year filing deadline for people who held TPS until shortly before filing.",
+    "The separate CHNV humanitarian parole process, under which more than 200,000 Haitians entered, was terminated in March 2025 and remains terminated."
+  ],
+
+  "timeline": [
+    { "date": "2010-01-21", "event": "Haiti designated for TPS after the January 12 earthquake.", "cite": "75 FR 3476", "url": "https://www.federalregister.gov/documents/2025/11/28/2025-21379/termination-of-the-designation-of-haiti-for-temporary-protected-status" },
+    { "date": "2011-05-19", "event": "Extended and redesignated.", "cite": "76 FR 29000" },
+    { "date": "2012-10-01", "event": "Extended.", "cite": "77 FR 59943" },
+    { "date": "2014-03-03", "event": "Extended.", "cite": "79 FR 11808" },
+    { "date": "2015-08-25", "event": "Extended.", "cite": "80 FR 51582" },
+    { "date": "2017-05-24", "event": "Extended.", "cite": "82 FR 23830" },
+    { "date": "2018-01-18", "event": "Terminated. The termination was enjoined in litigation and never took effect.", "cite": "83 FR 2648" },
+    { "date": "2021-08-03", "event": "Haiti newly designated for TPS.", "cite": "86 FR 41863" },
+    { "date": "2023-01-26", "event": "Extended and redesignated.", "cite": "88 FR 5022" },
+    { "date": "2024-07-01", "event": "Extended and redesignated for 18 months.", "cite": "89 FR 54484" },
+    { "date": "2025-02-24", "event": "DHS partially vacates the 2024 decision, cutting the 18-month extension to 12 months.", "cite": "90 FR 10511", "url": "https://www.federalregister.gov/documents/2025/02/24/2025-02970/partial-vacatur-of-2024-temporary-protected-status-decision-for-haiti" },
+    { "date": "2025-07-01", "event": "A federal court in New York holds the Secretary lacked authority to partially vacate a TPS designation.", "cite": "Haitian Evangelical Clergy Ass'n v. Trump, E.D.N.Y.", "url": "https://clearinghouse.net/case/46235/" },
+    { "date": "2025-07-30", "event": "Five Haitian TPS holders sue over the termination.", "cite": "Miot v. Trump, No. 1:25-cv-02471 (D.D.C.)", "url": "https://clearinghouse.net/case/47790/" },
+    { "date": "2025-11-28", "event": "DHS publishes the operative termination notice, effective February 3, 2026 at 11:59 p.m.", "cite": "90 FR 54733", "url": "https://www.federalregister.gov/documents/2025/11/28/2025-21379/termination-of-the-designation-of-haiti-for-temporary-protected-status", "key": true },
+    { "date": "2026-02-02", "event": "Judge Ana Reyes stays the termination, finding it was not the product of reasoned decision-making.", "cite": "Miot v. Trump (D.D.C.)", "url": "https://clearinghouse.net/case/47790/", "key": true },
+    { "date": "2026-03-16", "event": "The Supreme Court grants certiorari before judgment.", "cite": "Nos. 25-1083, 25-1084", "url": "https://www.supremecourt.gov/search.aspx?filename=/docket/docketfiles/html/public/25-1083.html" },
+    { "date": "2026-06-25", "event": "The Supreme Court decides Mullin v. Doe, 6-3, holding that courts may not hear non-constitutional challenges to TPS terminations.", "cite": "Mullin v. Doe", "url": "https://www.supremecourt.gov/opinions/25pdf/25-1083_f204.pdf", "key": true },
+    { "date": "2026-07-27", "event": "The Supreme Court's judgment issues — the last day court-ordered protection held.", "cite": "SCOTUS docket 25-1083", "url": "https://www.supremecourt.gov/search.aspx?filename=/docket/docketfiles/html/public/25-1083.html", "key": true },
+    { "date": "2026-08-05", "event": "The district court confirms its stay is no longer in effect. The equal protection claim remains pending.", "cite": "Miot v. Trump (D.D.C.)", "url": "https://natlawreview.com/article/dc-district-court-lifts-stay-blocking-termination-haiti-tps", "key": true }
+  ],
+
+  "who_is_affected": {
+    "headline": "352,959",
+    "headline_label": "Haitian nationals holding TPS when DHS published the termination notice",
+    "headline_source": { "org": "DHS, 90 FR 54733", "url": "https://www.federalregister.gov/documents/2025/11/28/2025-21379/termination-of-the-designation-of-haiti-for-temporary-protected-status", "as_of": "2025-11-28" },
+    "notes": [
+      { "text": "A further 18,068 people in that count had also been approved as lawful permanent residents, and so are not left without status by the termination.", "source": { "org": "DHS, 90 FR 54733", "url": "https://www.federalregister.gov/documents/2025/11/28/2025-21379/termination-of-the-designation-of-haiti-for-temporary-protected-status", "as_of": "2025-11-28" } }
+    ],
+    "by_state": {
+      "label": "Estimated Haitian TPS holders by state",
+      "caveat": "No government agency publishes a state-level count of Haitian TPS holders. These are modeled estimates from an advocacy organization, derived from augmented American Community Survey data, and should be read as approximations rather than administrative counts.",
+      "source": { "org": "FWD.us (immigration advocacy organization)", "url": "https://www.fwd.us/wp-content/uploads/2026/01/Haiti-TPS-Fact-Sheet_January-2026.pdf", "as_of": "2026-01", "kind": "advocacy" },
+      "series": [
+        { "label": "Florida", "value": 158000 },
+        { "label": "New York", "value": 40000 },
+        { "label": "Massachusetts", "value": 19000 },
+        { "label": "New Jersey", "value": 16000 },
+        { "label": "Pennsylvania", "value": 15000 },
+        { "label": "Georgia", "value": 14000 },
+        { "label": "Indiana", "value": 11000 }
+      ]
+    }
+  },
+
+  "what_termination_means": [
+    { "point": "Status reverts.", "detail": "A person returns to whatever immigration status they held before TPS, if any. For most people who entered without inspection, that means no status and accruing unlawful presence." },
+    { "point": "Work authorization ends with it.", "detail": "TPS-based EADs in categories A-12 and C-19 were auto-extended only through February 3, 2026. Work authorization is incident to the status; when the status ends, so does the authorization." },
+    { "point": "It was never a green-card track.", "detail": "DHS states in the termination notice that granting TPS \"does not result in or lead to lawful permanent resident status or any other immigration status.\"" },
+    { "point": "But it did clear one green-card hurdle.", "detail": "USCIS treats TPS holders as being in lawful status for INA 245(c)(2) purposes. What TPS does not supply on its own is the INA 245(a) requirement of having been inspected and admitted or paroled." },
+    { "point": "Travel on Form I-512T can change the picture.", "detail": "Since July 1, 2022, a TPS holder who travelled abroad on Form I-512T and was admitted on return is treated as inspected and admitted for adjustment purposes. For someone who originally crossed without inspection, whether they ever took such a trip is often the fact that decides whether a green-card case exists." },
+    { "point": "The 60-day floor is on the notice, not on benefits.", "detail": "INA 244(b)(3)(B) requires at least 60 days between publication and effect. It is a minimum notice period, not a grant of extra time to work or remain." }
+  ],
+
+  "contested": [
+    {
+      "question": "Was the termination lawful?",
+      "government": "DHS determined that permitting Haitian nationals to remain is contrary to the national interest. The notice cites 220,798 Border Patrol encounters with Haitian nationals in FY2024, a finding that Haiti \"lacks a central authority with sufficient availability and dissemination of law enforcement information,\" gangs operating \"with impunity, enabled by a weak or effectively absent central government,\" and a B-1/B-2 overstay rate of 24.84 percent.",
+      "government_source": { "org": "DHS, 90 FR 54733", "url": "https://www.federalregister.gov/documents/2025/11/28/2025-21379/termination-of-the-designation-of-haiti-for-temporary-protected-status", "as_of": "2025-11-28" },
+      "challengers": "Plaintiffs argued the termination was procedurally defective under the Administrative Procedure Act, including a failure to conduct proper interagency consultation, and was not the product of reasoned decision-making. They separately argued it violated Fifth Amendment equal protection.",
+      "challengers_source": { "org": "Congressional Research Service, LSB11446", "url": "https://www.everycrsreport.com/reports/LSB11446.html", "as_of": "2026" }
+    },
+    {
+      "question": "Can a court review a TPS termination at all?",
+      "government": "The government argued that 8 U.S.C. 1254a(b)(5)(A) bars judicial review of TPS determinations, and that \"determination\" covers the chain of events leading up to the decision, not merely the final conclusion.",
+      "government_source": { "org": "Mullin v. Doe, slip op.", "url": "https://www.supremecourt.gov/opinions/25pdf/25-1083_f204.pdf", "as_of": "2026-06-25" },
+      "challengers": "Plaintiffs argued the bar reaches only the ultimate judgment about country conditions, not whether the agency followed the procedures the statute requires. Three justices agreed in dissent.",
+      "challengers_source": { "org": "Mullin v. Doe, Kagan, J., dissenting", "url": "https://www.supremecourt.gov/opinions/25pdf/25-1083_f204.pdf", "as_of": "2026-06-25" },
+      "resolution": "The Supreme Court adopted the government's reading, 6-3, on June 25, 2026. The constitutional claim survives; the statutory ones do not."
+    },
+    {
+      "question": "How many people are affected, and where?",
+      "government_label": "The official count",
+      "challengers_label": "Independent estimates",
+      "government": "DHS published a single national figure — 352,959 — and no state breakdown.",
+      "government_source": { "org": "DHS, 90 FR 54733", "url": "https://www.federalregister.gov/documents/2025/11/28/2025-21379/termination-of-the-designation-of-haiti-for-temporary-protected-status", "as_of": "2025-11-28" },
+      "challengers": "Advocacy organizations put the figure near 330,000, with roughly 158,000 in Florida, based on modeled survey data rather than administrative records. The two numbers are not directly comparable: one counts grants, the other estimates people currently present.",
+      "challengers_source": { "org": "FWD.us", "url": "https://www.fwd.us/wp-content/uploads/2026/01/Haiti-TPS-Fact-Sheet_January-2026.pdf", "as_of": "2026-01", "kind": "advocacy" }
+    }
+  ],
+
+  "litigation": [
+    {
+      "case": "Mullin v. Doe",
+      "court": "Supreme Court of the United States",
+      "docket": "Nos. 25-1083, 25-1084",
+      "status": "Decided June 25, 2026. Judgment issued July 27, 2026.",
+      "summary": "Consolidated the Haiti case (Miot) and a Syria TPS case (Doe v. Noem). Held 6-3 that 8 U.S.C. 1254a(b)(5)(A) precludes courts from hearing non-constitutional challenges to TPS terminations, reading \"determination\" to cover the chain of events leading to the decision. The Court separately found the Haitian plaintiffs' equal protection claim unlikely to succeed, reasoning that the statements they cited could rest on race-neutral justifications. Alito, J., wrote for the Court; Kagan, J., dissented, joined by Sotomayor and Jackson, JJ.",
+      "url": "https://www.supremecourt.gov/opinions/25pdf/25-1083_f204.pdf"
+    },
+    {
+      "case": "Miot v. Trump",
+      "court": "U.S. District Court for the District of Columbia",
+      "docket": "No. 1:25-cv-02471, Judge Ana C. Reyes",
+      "status": "Open on the equal protection claim. The stay was lifted August 5, 2026.",
+      "summary": "Filed July 30, 2025 by five Haitian TPS holders. The court stayed the termination on February 2, 2026 in an 83-page opinion. The D.C. Circuit denied the government's emergency stay on March 6, 2026; the Supreme Court took the case directly and reversed.",
+      "url": "https://clearinghouse.net/case/47790/"
+    },
+    {
+      "case": "Haitian Evangelical Clergy Association v. Trump",
+      "court": "U.S. District Court for the Eastern District of New York",
+      "docket": "No. 1:25-cv-01464, Judge Brian M. Cogan; on appeal, 2d Cir. No. 25-02372",
+      "status": "Judgment for plaintiffs July 15, 2025; on appeal.",
+      "summary": "A separate and earlier case challenging the February 2025 partial vacatur rather than the November 2025 termination. The court held that the Secretary lacked authority to partially vacate a country's TPS designation.",
+      "url": "https://clearinghouse.net/case/46235/"
+    },
+    {
+      "case": "Noem v. National TPS Alliance",
+      "court": "Supreme Court of the United States",
+      "docket": "No. 24A1059",
+      "status": "Stay granted May 19, 2025, 8-1.",
+      "summary": "Concerned Venezuela rather than Haiti, but signalled the Court's willingness to let TPS terminations take effect while litigation continued. Mullin later resolved the underlying reviewability question.",
+      "url": "https://scotusblog.com/cases/case-files/noem-v-national-tps-alliance"
+    },
+    {
+      "case": "Svitlana Doe v. Noem",
+      "court": "U.S. District Court for the District of Massachusetts",
+      "docket": "No. 1:25-cv-10495, Judge Indira Talwani",
+      "status": "Ongoing; CHNV parole remains terminated.",
+      "summary": "Challenge to the March 2025 termination of the CHNV parole processes. The district court enjoined it in April 2025; the Supreme Court stayed that order on May 30, 2025; the First Circuit vacated the stay of the notice in September 2025. Proceedings continue on narrower questions, most recently Family Reunification Parole.",
+      "url": "https://clearinghouse.net/case/46186/"
+    }
+  ],
+
+  "related_programs": [
+    {
+      "name": "CHNV humanitarian parole",
+      "summary": "A parole process for Cubans, Haitians, Nicaraguans and Venezuelans with U.S.-based supporters, run from October 2022. DHS terminated it in a notice published March 25, 2025, effective on publication, with existing parole grants terminated April 24, 2025. Parole-based work authorization ended with the parole. DHS cited a lack of meaningful border-security gains, domestic strain, and conflict with its enforcement priorities.",
+      "cite": "90 FR 13611",
+      "url": "https://www.federalregister.gov/documents/2025/03/25/2025-05128/termination-of-parole-processes-for-cubans-haitians-nicaraguans-and-venezuelans",
+      "figures": [
+        { "label": "Haitians paroled in under CHNV", "value": "211,040", "source": { "org": "Refugees International, citing CBP monthly data (advocacy relay)", "url": "https://www.refugeesinternational.org/perspectives-and-commentaries/setting-the-record-straight-on-chnv/", "as_of": "2024-11", "kind": "advocacy" } },
+        { "label": "Total paroled under CHNV, all four countries", "value": "~532,000", "source": { "org": "DHS, 90 FR 13611", "url": "https://www.federalregister.gov/documents/2025/03/25/2025-05128/termination-of-parole-processes-for-cubans-haitians-nicaraguans-and-venezuelans", "as_of": "2025-03-25" } }
+      ],
+      "flag": "DHS published the total but not a breakdown by nationality. The Haitian figure is CBP data relayed by an advocacy organization and could not be verified at the source."
+    }
+  ],
+
+  "conditions": {
+    "intro": "These are the conditions DHS was assessing, and that people would return to. The figures below are UN, WHO, IPC and U.S. government sources. Where a period is partial it is labeled as such and is not comparable to a full year.",
+    "metrics": [
+      {
+        "id": "killed",
+        "label": "People killed in violence",
+        "unit": "people",
+        "note": "The UN began systematic tracking in 2022. There is no comparable UN series before then, so the chart starts there. Attribution matters and is often omitted: in the first quarter of 2026, BINUH attributed 69 percent of casualties to security-force operations and 27 percent to gangs; in the second quarter, 55 percent to gangs and more than 40 percent to security operations.",
+        "series": [
+          { "period": "2022", "value": 2183, "comparable": true, "flag": "Derived from a UN report as relayed by VOA; not verified against the UN original.", "source": { "org": "UN, via VOA", "url": "https://www.voanews.com/amp/un-report-haiti-homicides-more-than-doubled-in-2023/7451797.html", "as_of": "2024-01" } },
+          { "period": "2023", "value": 4451, "comparable": true, "note": "Gang-violence killings. A separate UN figure of 4,789 registered homicides for the same year uses a different metric.", "source": { "org": "OHCHR / BINUH", "url": "https://www.ohchr.org/en/press-releases/2024/03/haiti-cataclysmic-situation-demands-immediate-and-bold-action-un-report", "as_of": "2024-03-28" } },
+          { "period": "2024", "value": 5601, "comparable": true, "source": { "org": "OHCHR", "url": "https://www.ohchr.org/en/press-releases/2025/01/haiti-over-5600-killed-gang-violence-2024-un-figures-show", "as_of": "2025-01-07" } },
+          { "period": "2025", "value": 5915, "comparable": true, "source": { "org": "BINUH", "url": "https://binuh.unmissions.org/en/communiques-de-presse/haiti-la-situation-des-droits-humains-reste-extremement-preoccupante-au", "as_of": "2026-01-30" } },
+          { "period": "2026 (Jan-Jun)", "value": 3050, "comparable": false, "note": "Half a year only. Sum of BINUH quarterly reports for Q1 (1,642) and Q2 (1,408). Do not compare to the full years above and do not annualize.", "source": { "org": "BINUH quarterly reports", "url": "https://binuh.unmissions.org/en/press-releases/haiti-more-than-1600-people-killed-in-the-first-quarter-of-2026-a-human", "as_of": "2026-08-25" } }
+        ]
+      },
+      {
+        "id": "displaced",
+        "label": "People displaced inside Haiti",
+        "unit": "people",
+        "note": "About 85 percent of displaced people live outside formal sites, with host families. In May 2026 the number displaced within Port-au-Prince passed 300,000 for the first time on record.",
+        "series": [
+          { "period": "Jun 2025", "value": 1300000, "comparable": true, "source": { "org": "IOM DTM, via BINUH", "url": "https://binuh.unmissions.org/sites/default/files/quarterly_report_on_the_human_rights_situation_in_haiti_april_-_june_2025.pdf", "as_of": "2025-08" } },
+          { "period": "Sep 2025", "value": 1412199, "comparable": true, "source": { "org": "IOM DTM, via OHCHR A/HRC/61/74", "url": "https://www.ohchr.org/sites/default/files/documents/hrbodies/hrcouncil/sessions-regular/session61/advance-version/a-hrc-61-74-auv.pdf", "as_of": "2026-03-23" } },
+          { "period": "Dec 2025", "value": 1450000, "comparable": true, "note": "Includes about 755,000 children.", "source": { "org": "IOM DTM Round 12, via UNICEF", "url": "https://www.unicef.org/media/180471/file/Haiti-Humanitarian-Situation-Report-No.1,31-March-2026.pdf.pdf", "as_of": "2026-02" } },
+          { "period": "May 2026", "value": 1470000, "comparable": true, "source": { "org": "IOM DTM Round 13", "url": "https://dtm.iom.int/reports/haiti-information-sheet-displacement-situation-round-13-may-2026", "as_of": "2026-06-05" } }
+        ]
+      },
+      {
+        "id": "kidnappings",
+        "label": "Reported kidnappings",
+        "unit": "cases",
+        "note": "BINUH cautions that these figures likely understate the total, because families often do not report a kidnapping and negotiate directly with the captors instead.",
+        "series": [
+          { "period": "2022", "value": 1359, "comparable": true, "flag": "UN figure relayed by VOA; not verified against the UN original.", "source": { "org": "UN, via VOA", "url": "https://www.voanews.com/amp/un-report-haiti-homicides-more-than-doubled-in-2023/7451797.html", "as_of": "2024-01" } },
+          { "period": "2023", "value": 2490, "comparable": true, "flag": "UN figure relayed by VOA; not verified against the UN original.", "source": { "org": "UN, via VOA", "url": "https://www.voanews.com/amp/un-report-haiti-homicides-more-than-doubled-in-2023/7451797.html", "as_of": "2024-01" } },
+          { "period": "2024", "value": 1494, "comparable": true, "source": { "org": "OHCHR", "url": "https://www.ohchr.org/en/press-releases/2025/01/haiti-over-5600-killed-gang-violence-2024-un-figures-show", "as_of": "2025-01-07" } },
+          { "period": "2025", "value": 647, "comparable": true, "source": { "org": "BINUH", "url": "https://binuh.unmissions.org/en/communiques-de-presse/haiti-la-situation-des-droits-humains-reste-extremement-preoccupante-au", "as_of": "2026-01-30" } },
+          { "period": "2026 (Jan-Jun)", "value": 138, "comparable": false, "note": "Half a year only. Q1 57 plus Q2 81.", "source": { "org": "BINUH quarterly reports", "url": "https://binuh.unmissions.org/en/press-releases/haiti-more-than-1600-people-killed-in-the-first-quarter-of-2026-a-human", "as_of": "2026-08-25" } }
+        ]
+      },
+      {
+        "id": "food",
+        "label": "People facing crisis-level hunger or worse (IPC Phase 3+)",
+        "unit": "people",
+        "note": "IPC figures are period analyses, not point-in-time counts. No IPC analysis covering July 2026 onward had been published as of September 3, 2026, so the most recent figure is a projection whose window has closed.",
+        "series": [
+          { "period": "Sep 2022-Jun 2023", "value": 4700000, "comparable": true, "source": { "org": "IPC", "url": "https://www.ipcinfo.org/ipc-country-analysis/en/?country=HTI", "as_of": "2022-09" } },
+          { "period": "Aug 2023-Jun 2024", "value": 4350000, "comparable": true, "source": { "org": "IPC", "url": "https://www.ipcinfo.org/ipc-country-analysis/en/?country=HTI", "as_of": "2023-08" } },
+          { "period": "Sep 2025-Feb 2026", "value": 5700000, "comparable": true, "note": "51 percent of the population; 1.9 million in Phase 4 (Emergency).", "source": { "org": "IPC", "url": "https://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1159760/", "as_of": "2025-10-10" } },
+          { "period": "Mar-Jun 2026 (projection)", "value": 5830000, "comparable": false, "note": "A projection, not an observation. 52 percent of the roughly 11.2 million people analyzed.", "source": { "org": "IPC", "url": "https://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1162842/?iso3=HTI", "as_of": "2026-04-16" } }
+        ]
+      }
+    ],
+    "health": {
+      "label": "Public health",
+      "points": [
+        { "text": "Cholera has declined sharply. Haiti recorded 529 cases and 2 deaths between January 1 and May 31, 2026, against 3,664 suspected cases and 71 deaths in all of 2025.", "source": { "org": "WHO Epidemiological Update No. 38", "url": "https://cdn.who.int/media/docs/default-source/documents/emergencies/situation-reports/20260630_multi-country_outbreak-of-cholera_epidemiological_update_38.pdf?sfvrsn=82e79253_3&download=true", "as_of": "2026-06-30" } },
+        { "text": "Only about 10 percent of national health facilities with inpatient capacity are fully operational, and an estimated 40 percent of medical personnel have left the country.", "source": { "org": "OHCHR, A/HRC/61/74", "url": "https://www.ohchr.org/sites/default/files/documents/hrbodies/hrcouncil/sessions-regular/session61/advance-version/a-hrc-61-74-auv.pdf", "as_of": "2026-03-23" } },
+        { "text": "6.4 million people in Haiti are assessed as needing humanitarian assistance in 2026, up from 6.0 million in 2025.", "source": { "org": "UN OCHA", "url": "https://www.unocha.org/publications/report/haiti/haiti-2026-humanitarian-needs-and-response-plan-executive-summary-december-2025", "as_of": "2025-12" } }
+      ]
+    },
+    "political": {
+      "label": "Government and security",
+      "events": [
+        { "date": "2025-09-30", "text": "UN Security Council Resolution 2793 authorizes a Gang Suppression Force of up to 5,550 personnel and establishes a UN Support Office in Haiti.", "url": "https://unscr.com/en/resolutions/2793/" },
+        { "date": "2026-01-29", "text": "Resolution 2814 renews the BINUH mandate to January 31, 2027." },
+        { "date": "2026-02-07", "text": "The Transitional Presidential Council's mandate ends and the council is dissolved, leaving Prime Minister Alix Didier Fils-Aime as the sole executive authority.", "url": "https://binuh.unmissions.org/en/press-releases/binuh-statement-end-mandate-transitional-presidential-council" },
+        { "date": "2026-04-01", "text": "The UN Support Office becomes fully operational and the first Gang Suppression Force troops arrive. The Kenyan contingent that formed the bulk of the predecessor mission departs during April." },
+        { "date": "2026-06-01", "text": "The Gang Suppression Force formally begins operations in limited capacity. By July 8 it stood at 1,083 military personnel, contributed by Chad, Jamaica, Mongolia and Sri Lanka — roughly a fifth of its authorized ceiling.", "url": "https://www.securitycouncilreport.org/monthly-forecast/2026-09/haiti-36.php" },
+        { "date": "2026-07-28", "text": "The electoral council sets a first round of national elections for December 13, 2026, with a runoff on February 21, 2027 — the first national vote in a decade.", "url": "https://www.securitycouncilreport.org/monthly-forecast/2026-09/haiti-36.php", "flag": "Confirmed through Security Council Report; the electoral council's own calendar was not opened directly." }
+      ]
+    },
+    "advisory": {
+      "level": 4,
+      "label": "Level 4 — Do Not Travel",
+      "reasons": "Crime, kidnapping, terrorism, civil unrest and limited health care.",
+      "issued": "2026-07-10",
+      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/haiti-travel-advisory.html",
+      "source": { "org": "U.S. Department of State", "as_of": "2026-07-23" }
+    }
+  },
+
+  "changes": [
+    { "date": "2026-09-03", "text": "First publication. Timeline corrected: earlier drafts treated July 27, 2026 as an announcement or Federal Register date. It is neither — it is the date the Supreme Court's judgment issued in Mullin v. Doe. The operative Federal Register notice is 90 FR 54733, published November 28, 2025, effective February 3, 2026." }
+  ]
+}

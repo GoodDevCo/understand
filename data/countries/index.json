@@ -1,0 +1,11 @@
+{
+  "updated": "2026-09-03",
+  "default": "haiti",
+  "countries": [
+    { "slug": "haiti", "name": "Haiti", "status": "TPS terminated", "published": true },
+    { "slug": "venezuela", "name": "Venezuela", "status": "TPS terminated", "published": false },
+    { "slug": "honduras", "name": "Honduras", "status": "TPS terminated", "published": false },
+    { "slug": "nicaragua", "name": "Nicaragua", "status": "TPS terminated", "published": false },
+    { "slug": "nepal", "name": "Nepal", "status": "TPS terminated", "published": false }
+  ]
+}
