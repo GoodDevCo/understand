@@ -1,0 +1,32 @@
+{
+  "updated": "2026-09-03",
+  "heading": "Where to send someone",
+  "note": "Your most useful act is almost always a warm handoff to someone who can actually give legal advice. Start with a directory — a directory stays current in a way any list on a web page cannot. Each country page also lists organizations that serve that community specifically.",
+  "directories": [
+    {
+      "name": "EOIR List of Pro Bono Legal Service Providers",
+      "org": "U.S. Department of Justice",
+      "what": "The official, court-by-court list of organizations and attorneys who have committed to at least 50 hours a year of free legal services. Published quarterly in January, April, July and October.",
+      "url": "https://www.justice.gov/eoir/list-pro-bono-legal-service-providers",
+      "cost": "Free",
+      "verified": "2026-09-03"
+    },
+    {
+      "name": "DOJ roster of accredited representatives",
+      "org": "U.S. Department of Justice",
+      "what": "Non-attorneys the government has approved to represent people, listed by state and city, along with the organizations they work for. This is how you check whether someone offering help is actually authorized.",
+      "url": "https://www.justice.gov/eoir/recognition-accreditation-roster-reports",
+      "cost": "Free to search",
+      "verified": "2026-09-03",
+      "flag": "The roster showed a last-updated date of April 28, 2025. Someone missing from it is not necessarily unaccredited — ask the organization directly."
+    },
+    {
+      "name": "National Immigration Legal Services Directory",
+      "org": "Immigration Advocates Network and Scale Justice",
+      "what": "Searchable by state, county, zip code or detention facility. Only nonprofit organizations providing free or low-cost immigration legal services are listed.",
+      "url": "https://www.immigrationadvocates.org/legaldirectory/",
+      "cost": "Free or low-cost only",
+      "verified": "2026-09-03"
+    }
+  ]
+}

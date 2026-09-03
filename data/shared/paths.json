@@ -1,28 +1,70 @@
 {
   "updated": "2026-09-03",
-  "heading": "What they might still be able to do",
-  "lede": "You cannot tell someone which of these applies to them — that is exactly the line. What you can do is know that these exist, so you understand why getting to a lawyer quickly matters, and so nobody walks away believing there is nothing left to try.",
-  "critical": [
+  "heading": "What relief exists",
+  "lede": "These are the doors that exist in U.S. immigration law. You cannot tell someone which one is theirs — that is exactly the line. Knowing they exist is what stops anyone walking away believing there is nothing left to try, and it is why getting to a lawyer quickly matters.",
+  "paths": [
     {
-      "title": "Ask whether they ever travelled on a TPS travel document.",
-      "body": "This is the single question most likely to change someone's case. Many people who had TPS first entered the country without being inspected at a border post. That blocks them from applying for a green card from inside the United States, even if they marry a U.S. citizen. But since July 2022, a TPS holder who travelled abroad on Form I-512T and was let back in is treated as having been inspected and admitted. That one trip can turn an impossible case into a workable one.",
-      "why": "Ask it, write down the answer, and make sure the lawyer hears it. Do not try to work out what it means.",
-      "source": { "org": "USCIS Policy Alert, TPS and Adjustment of Status", "url": "https://www.uscis.gov/sites/default/files/document/policy-manual-updates/20220701-TPSAndAOS.pdf", "as_of": "2022-07-01" }
+      "name": "Asylum",
+      "plain": "For someone who fears persecution because of their race, religion, nationality, politics, or the group they belong to.",
+      "source": {
+        "org": "DOJ EOIR",
+        "url": "https://www.justice.gov/eoir/asylum-withholding-removal-convention-against-torture",
+        "as_of": "2026-09-03"
+      }
     },
     {
-      "title": "Losing TPS does not automatically close off asylum.",
-      "body": "Asylum normally has to be filed within one year of arriving, and people who have been here a decade assume that door shut long ago. But the regulation lists holding TPS as an extraordinary circumstance that excuses a late filing, as long as they file within a reasonable period after it ends. Many people do not know this, and some are told the opposite.",
-      "why": "The word that matters is soon. A reasonable period is not measured in years.",
-      "source": { "org": "8 CFR 208.4(a)(5)(iv)", "url": "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-208/subject-group-ECFR59c76d3838fbb98/section-208.4", "as_of": "2026-09-03" }
+      "name": "A family petition",
+      "plain": "A U.S. citizen can petition a spouse, child, parent or sibling. A permanent resident can petition only a spouse or unmarried child. Spouses, minor children and parents of citizens skip the waiting line entirely.",
+      "source": {
+        "org": "U.S. Department of State",
+        "url": "https://travel.state.gov/content/travel/en/us-visas/immigrate/family-immigration.html",
+        "as_of": "2026-09-03"
+      }
+    },
+    {
+      "name": "An employer petition",
+      "plain": "Usually requires an employer and a long labor certification process. A few categories let a person petition for themselves.",
+      "source": {
+        "org": "U.S. Department of State",
+        "url": "https://travel.state.gov/content/travel/en/us-visas/immigrate/employment-based-immigrant-visas.html",
+        "as_of": "2026-09-03"
+      }
+    },
+    {
+      "name": "U visa",
+      "plain": "For a victim of a serious crime who was harmed by it and who helps law enforcement. Requires a certification signed by police or a prosecutor.",
+      "source": {
+        "org": "USCIS Policy Manual",
+        "url": "https://www.uscis.gov/policy-manual/volume-3-part-c-chapter-2",
+        "as_of": "2026-09-03"
+      }
+    },
+    {
+      "name": "T visa",
+      "plain": "For a victim of human trafficking. There is no filing deadline.",
+      "source": {
+        "org": "USCIS Policy Manual",
+        "url": "https://www.uscis.gov/policy-manual/volume-3-part-b-chapter-2",
+        "as_of": "2026-09-03"
+      }
+    },
+    {
+      "name": "VAWA",
+      "plain": "For someone abused by a U.S. citizen or permanent resident spouse, parent, or adult child. They file it themselves, and the abuser is never told.",
+      "source": {
+        "org": "USCIS Policy Manual",
+        "url": "https://www.uscis.gov/policy-manual/volume-3-part-d-chapter-2",
+        "as_of": "2026-09-03"
+      }
+    },
+    {
+      "name": "Voluntary departure",
+      "plain": "Leaving without a removal order on their record, which keeps some future doors open. It has strict deadlines and usually a bond. Nobody should choose this without a lawyer.",
+      "source": {
+        "org": "DOJ EOIR",
+        "url": "https://www.justice.gov/eoir/voluntary-departure",
+        "as_of": "2026-09-03"
+      }
     }
-  ],
-  "paths": [
-    { "name": "Asylum", "plain": "For someone who fears persecution because of their race, religion, nationality, politics, or the group they belong to.", "source": { "org": "DOJ EOIR", "url": "https://www.justice.gov/eoir/asylum-withholding-removal-convention-against-torture", "as_of": "2026-09-03" } },
-    { "name": "A family petition", "plain": "A U.S. citizen can petition a spouse, child, parent or sibling. A permanent resident can petition only a spouse or unmarried child. Spouses, minor children and parents of citizens skip the waiting line entirely.", "source": { "org": "U.S. Department of State", "url": "https://travel.state.gov/content/travel/en/us-visas/immigrate/family-immigration.html", "as_of": "2026-09-03" } },
-    { "name": "An employer petition", "plain": "Usually requires an employer and a long labor certification process. A few categories let a person petition for themselves.", "source": { "org": "U.S. Department of State", "url": "https://travel.state.gov/content/travel/en/us-visas/immigrate/employment-based-immigrant-visas.html", "as_of": "2026-09-03" } },
-    { "name": "U visa", "plain": "For a victim of a serious crime who was harmed by it and who helps law enforcement. Requires a certification signed by police or a prosecutor.", "source": { "org": "USCIS Policy Manual", "url": "https://www.uscis.gov/policy-manual/volume-3-part-c-chapter-2", "as_of": "2026-09-03" } },
-    { "name": "T visa", "plain": "For a victim of human trafficking. There is no filing deadline.", "source": { "org": "USCIS Policy Manual", "url": "https://www.uscis.gov/policy-manual/volume-3-part-b-chapter-2", "as_of": "2026-09-03" } },
-    { "name": "VAWA", "plain": "For someone abused by a U.S. citizen or permanent resident spouse, parent, or adult child. They file it themselves, and the abuser is never told.", "source": { "org": "USCIS Policy Manual", "url": "https://www.uscis.gov/policy-manual/volume-3-part-d-chapter-2", "as_of": "2026-09-03" } },
-    { "name": "Voluntary departure", "plain": "Leaving without a removal order on their record, which keeps some future doors open. It has strict deadlines and usually a bond. Nobody should choose this without a lawyer.", "source": { "org": "DOJ EOIR", "url": "https://www.justice.gov/eoir/voluntary-departure", "as_of": "2026-09-03" } }
   ]
 }
